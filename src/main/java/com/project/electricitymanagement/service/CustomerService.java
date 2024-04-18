@@ -88,7 +88,6 @@ public class CustomerService {
         validateMeterAndSupplier(customerDetails);
 
         //If we consider that the connection date should only be set while creating a new customer, then while updating a customer, setting Connection date is skipped.
-
         modelMapper.typeMap(CustomerDto.class, Customer.class)
                         .addMappings(mapper->mapper.skip(Customer::setConnectionDate));
         modelMapper.map(customerDetails, customer);
