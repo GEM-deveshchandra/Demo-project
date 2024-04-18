@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="logging.file.name" value="application-log"/>
+    <property name="logging.file.path" value="./logs/"/>
+
+    <!-- console log appender -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- File log appender -->
+    <appender name="LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+
+ <!--The following rolling policy creates daily logs with max log size of 10 MB, keeping 30 days worth of history, but at most 1 GB of total archived logs-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${logging.file.path}/${logging.file.name}-%d{yyyy-MM-dd}.%i</fileNamePattern>
+            <!-- each archived file's size will be max 10MB -->
+            <maxFileSize>10MB</maxFileSize>
+            <!-- 30 days to keep -->
+            <maxHistory>30</maxHistory>
+            <!-- total size of all archive files, if total size > 1GB, it will delete old archived file -->
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+
+    </appender>
+
+    <appender name="ASYNC1" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="CONSOLE"/>
+<!--    <appender-ref ref="LOG_FILE"/>-->
+        <queueSize>512</queueSize>
+        <discardingThreshold>0</discardingThreshold>
+
+    </appender>
+    <appender name="ASYNC2" class="ch.qos.logback.classic.AsyncAppender">
+<!--        <appender-ref ref="CONSOLE"/>-->
+        <appender-ref ref="LOG_FILE"/>
+        <queueSize>512</queueSize>
+        <discardingThreshold>0</discardingThreshold>
+
+    </appender>
+
+
+    <root level="Info" >
+        <appender-ref ref="ASYNC1" />
+    </root>
+
+    <logger name="com.project.electricitymanagement.controller" level="debug" additivity ="false">
+        <appender-ref ref="ASYNC2" />
+
+    </logger>
+
+    <logger name="com.project.electricitymanagement.service" level="debug" additivity ="false">
+        <appender-ref ref="ASYNC2" />
+
+    </logger>
+
+    <logger name="com.project.electricitymanagement.exception" level="debug" additivity ="false">
+        <appender-ref ref="ASYNC2" />
+
+    </logger>
+
+</configuration>

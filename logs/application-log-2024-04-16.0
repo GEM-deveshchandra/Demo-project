@@ -1,0 +1,63 @@
+2024-04-16 14:46:32.776 [main] INFO  c.p.d.c.PricePerUnitController - Request to delete price per unit with id 1
+2024-04-16 14:46:32.813 [main] INFO  c.p.d.c.PricePerUnitController - Price per unit deleted with id 1
+2024-04-16 14:46:32.886 [main] INFO  c.p.d.c.PricePerUnitController - Request for price per unit with id 1
+2024-04-16 14:46:32.888 [main] INFO  c.p.d.c.PricePerUnitController - Fetched price per unit with id: 1
+2024-04-16 14:46:32.897 [main] INFO  c.p.d.c.PricePerUnitController - Request for updating price per unit with id 1
+2024-04-16 14:46:32.898 [main] INFO  c.p.d.c.PricePerUnitController - Updated price per unit with id 1
+2024-04-16 14:46:32.905 [main] INFO  c.p.d.c.PricePerUnitController - Request for fetching all prices per unit
+2024-04-16 14:46:32.905 [main] INFO  c.p.d.c.PricePerUnitController - Fetched 2 prices per unit
+2024-04-16 14:46:32.911 [main] INFO  c.p.d.c.PricePerUnitController - Request for creating a new price per unit.
+2024-04-16 14:46:32.912 [main] INFO  c.p.d.c.PricePerUnitController - New price per unit created with id 3
+2024-04-16 14:46:33.005 [main] INFO  c.p.d.controller.CustomerController - Request for fetching bill of customer with id 1
+2024-04-16 14:46:33.006 [main] INFO  c.p.d.controller.CustomerController - Fetched bill of customer with id 1
+2024-04-16 14:46:33.014 [main] INFO  c.p.d.controller.CustomerController - Request for customer with id 1
+2024-04-16 14:46:33.014 [main] INFO  c.p.d.controller.CustomerController - Fetched customer with id: 1
+2024-04-16 14:46:33.021 [main] INFO  c.p.d.controller.CustomerController - Request for fetching all customers
+2024-04-16 14:46:33.021 [main] INFO  c.p.d.controller.CustomerController - Fetched 2 customers
+2024-04-16 14:46:33.029 [main] INFO  c.p.d.controller.CustomerController - Request for updating customer with id 1
+2024-04-16 14:46:33.029 [main] INFO  c.p.d.controller.CustomerController - Updated customer with id 1
+2024-04-16 14:46:33.039 [main] INFO  c.p.d.controller.CustomerController - Request for creating a new customer
+2024-04-16 14:46:33.040 [main] INFO  c.p.d.controller.CustomerController - New customer created with id 1
+2024-04-16 14:46:33.045 [main] INFO  c.p.d.controller.CustomerController - Request to delete customer with id 1
+2024-04-16 14:46:33.046 [main] INFO  c.p.d.controller.CustomerController - Customer deleted with id 1
+2024-04-16 14:46:38.880 [main] INFO  c.p.d.controller.SupplierController - Request for creating a new supplier
+2024-04-16 14:46:38.881 [main] INFO  c.p.d.controller.SupplierController - New supplier created with id 3
+2024-04-16 14:46:38.888 [main] INFO  c.p.d.controller.SupplierController - Request for updating supplier with id 1
+2024-04-16 14:46:38.888 [main] INFO  c.p.d.controller.SupplierController - Updated supplier with id 1 
+2024-04-16 14:46:38.898 [main] INFO  c.p.d.controller.SupplierController - Request for fetching all suppliers
+2024-04-16 14:46:38.899 [main] INFO  c.p.d.controller.SupplierController - Fetched 2 suppliers
+2024-04-16 14:46:38.904 [main] INFO  c.p.d.controller.SupplierController - Request for supplier with id 1
+2024-04-16 14:46:38.904 [main] INFO  c.p.d.controller.SupplierController - Fetched supplier with id 1
+2024-04-16 14:46:38.910 [main] INFO  c.p.d.controller.SupplierController - Request to delete supplier with id 1
+2024-04-16 14:46:38.911 [main] INFO  c.p.d.controller.SupplierController - Supplier deleted with id 1
+2024-04-16 14:46:38.956 [main] INFO  c.p.demo.controller.MeterController - Request to delete meter with id 1
+2024-04-16 14:46:38.958 [main] INFO  c.p.demo.controller.MeterController - Meter deleted with id 1
+2024-04-16 14:46:38.961 [main] INFO  c.p.demo.controller.MeterController - Request for updating meter with id 1
+2024-04-16 14:46:38.962 [main] INFO  c.p.demo.controller.MeterController - Updated meter with id 1
+2024-04-16 14:46:38.965 [main] INFO  c.p.demo.controller.MeterController - Request for creating a new meter
+2024-04-16 14:46:38.966 [main] INFO  c.p.demo.controller.MeterController - New meter created with id 1
+2024-04-16 14:46:38.974 [main] INFO  c.p.demo.controller.MeterController - Request for meter with id 1
+2024-04-16 14:46:38.975 [main] INFO  c.p.demo.controller.MeterController - Fetched meter with id 1
+2024-04-16 14:46:38.979 [main] INFO  c.p.demo.controller.MeterController - Request for fetching all meters
+2024-04-16 14:46:38.979 [main] INFO  c.p.demo.controller.MeterController - Fetched 2 meters
+2024-04-16 14:46:39.490 [main] INFO  c.p.demo.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-16 15:40:07.018 [http-nio-8080-exec-3] INFO  c.p.d.controller.CustomerController - Request for fetching bill of customer with id 1
+2024-04-16 15:40:07.172 [http-nio-8080-exec-3] DEBUG c.p.d.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Customer not found with id : '1', path=uri=/api/customers/1/bill)
+2024-04-16 15:40:28.211 [http-nio-8080-exec-8] INFO  c.p.d.controller.CustomerController - Request for creating a new customer
+2024-04-16 15:40:28.215 [http-nio-8080-exec-8] DEBUG c.p.d.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Meter not found with id : '0', path=uri=/api/customers)
+2024-04-16 15:40:36.963 [http-nio-8080-exec-1] INFO  c.p.d.controller.CustomerController - Request for creating a new customer
+2024-04-16 15:40:36.981 [http-nio-8080-exec-1] DEBUG c.p.d.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Supplier not found with id : '2', path=uri=/api/customers)
+2024-04-16 15:40:51.002 [http-nio-8080-exec-9] INFO  c.p.d.controller.SupplierController - Request for creating a new supplier
+2024-04-16 15:40:51.060 [http-nio-8080-exec-9] INFO  c.p.d.controller.SupplierController - New supplier created with id 1
+2024-04-16 15:40:55.991 [http-nio-8080-exec-4] INFO  c.p.d.controller.CustomerController - Request for creating a new customer
+2024-04-16 15:40:55.994 [http-nio-8080-exec-4] DEBUG c.p.d.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Supplier not found with id : '2', path=uri=/api/customers)
+2024-04-16 15:41:00.090 [http-nio-8080-exec-3] INFO  c.p.d.controller.SupplierController - Request for creating a new supplier
+2024-04-16 15:41:00.093 [http-nio-8080-exec-3] INFO  c.p.d.controller.SupplierController - New supplier created with id 2
+2024-04-16 15:41:03.356 [http-nio-8080-exec-10] INFO  c.p.d.controller.CustomerController - Request for creating a new customer
+2024-04-16 15:41:03.462 [http-nio-8080-exec-10] INFO  c.p.demo.service.CustomerService - Calculating bill of customer having meter id 2
+2024-04-16 15:41:03.472 [http-nio-8080-exec-10] INFO  c.p.d.controller.CustomerController - New customer created with id 1
+2024-04-16 15:42:01.237 [http-nio-8080-exec-5] INFO  c.p.d.controller.CustomerController - Request for fetching bill of customer with id 1
+2024-04-16 15:42:01.242 [http-nio-8080-exec-5] INFO  c.p.demo.service.CustomerService - Calculating bill of customer having meter id 2
+2024-04-16 15:42:01.242 [http-nio-8080-exec-5] INFO  c.p.d.controller.CustomerController - Fetched bill of customer with id 1
+2024-04-16 15:42:24.082 [http-nio-8080-exec-4] INFO  c.p.d.controller.CustomerController - Request for fetching all customers
+2024-04-16 15:42:24.206 [http-nio-8080-exec-4] INFO  c.p.d.controller.CustomerController - Fetched 1 customers

@@ -1,0 +1,41 @@
+2024-04-18 08:33:10.128 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 10:51:59.379 [main] INFO  c.p.e.service.CustomerServiceTest - Starting CustomerServiceTest using Java 17.0.7 with PID 15556 (started by Devesh.Chandra in C:\Users\devesh.chandra\Downloads\demo)
+2024-04-18 10:51:59.380 [main] DEBUG c.p.e.service.CustomerServiceTest - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18 10:51:59.380 [main] INFO  c.p.e.service.CustomerServiceTest - The following 1 profile is active: "dev"
+2024-04-18 10:52:07.347 [main] INFO  c.p.e.service.CustomerServiceTest - Started CustomerServiceTest in 8.259 seconds (process running for 9.814)
+2024-04-18 10:52:09.008 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 10:57:47.984 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 10:58:31.889 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 10:59:14.662 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:04:29.875 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:04:29.901 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:14:28.278 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:17:05.415 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:20:37.617 [main] INFO  c.p.e.controller.CustomerController - Request for creating a new customer
+2024-04-18 11:20:37.626 [main] INFO  c.p.e.controller.CustomerController - New customer created with id 1
+2024-04-18 11:22:51.141 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:23:24.635 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:24:00.788 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:24:29.477 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:32:19.721 [main] INFO  c.p.e.service.CustomerServiceTest - Starting CustomerServiceTest using Java 17.0.7 with PID 3276 (started by Devesh.Chandra in C:\Users\devesh.chandra\Downloads\demo)
+2024-04-18 11:32:19.721 [main] DEBUG c.p.e.service.CustomerServiceTest - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18 11:32:19.722 [main] INFO  c.p.e.service.CustomerServiceTest - The following 1 profile is active: "dev"
+2024-04-18 11:32:26.565 [main] INFO  c.p.e.service.CustomerServiceTest - Started CustomerServiceTest in 7.231 seconds (process running for 10.033)
+2024-04-18 11:32:27.136 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:32:41.442 [main] INFO  c.p.e.service.CustomerServiceTest - Starting CustomerServiceTest using Java 17.0.7 with PID 1144 (started by Devesh.Chandra in C:\Users\devesh.chandra\Downloads\demo)
+2024-04-18 11:32:41.443 [main] DEBUG c.p.e.service.CustomerServiceTest - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18 11:32:41.444 [main] INFO  c.p.e.service.CustomerServiceTest - The following 1 profile is active: "dev"
+2024-04-18 11:32:48.514 [main] INFO  c.p.e.service.CustomerServiceTest - Started CustomerServiceTest in 7.496 seconds (process running for 10.244)
+2024-04-18 11:32:49.087 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:34:08.778 [main] INFO  c.p.e.service.CustomerServiceTest - Starting CustomerServiceTest using Java 17.0.7 with PID 24276 (started by Devesh.Chandra in C:\Users\devesh.chandra\Downloads\demo)
+2024-04-18 11:34:08.779 [main] DEBUG c.p.e.service.CustomerServiceTest - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-18 11:34:08.779 [main] INFO  c.p.e.service.CustomerServiceTest - The following 1 profile is active: "dev"
+2024-04-18 11:34:15.546 [main] INFO  c.p.e.service.CustomerServiceTest - Started CustomerServiceTest in 7.17 seconds (process running for 9.893)
+2024-04-18 11:49:42.193 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:49:42.216 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:50:29.952 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:51:33.761 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:51:33.786 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:59:20.115 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 11:59:20.137 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-18 12:41:16.946 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
