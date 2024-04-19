@@ -1,6 +1,5 @@
 package com.project.electricitymanagement.service;
 
-import com.project.electricitymanagement.config.ModelMapperConfig;
 import com.project.electricitymanagement.dto.CustomerDto;
 import com.project.electricitymanagement.entity.Customer;
 import com.project.electricitymanagement.entity.Meter;
@@ -17,16 +16,13 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.config.Configuration;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.modelmapper.TypeMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -46,8 +42,7 @@ class CustomerServiceTest {
     private SupplierRepository supplierRepository;
     @Mock
     private ModelMapper modelMapper;
-    @Mock
-    private ModelMapperConfig modelMapperConfig;
+
     @Mock
     PricePerUnitRepository pricePerUnitRepository;
     @InjectMocks
@@ -55,9 +50,12 @@ class CustomerServiceTest {
 
     private Customer testCustomer;
     private CustomerDto testCustomerDto;
-
+    Meter meter;
+    Supplier supplier;
     @BeforeEach
     void setUp() {
+        meter = new Meter(1L,"2",234);
+        supplier = new Supplier(1L,"Danish","Urban");
         testCustomer = new Customer();
         testCustomer.setId(1L);
         testCustomer.setName("Rahul");
@@ -65,8 +63,8 @@ class CustomerServiceTest {
         testCustomer.setConnectionDate(LocalDate.of(2022, 1, 1));
         testCustomer.setLastReading(100.0);
         testCustomer.setCurrentReading(150.0);
-        testCustomer.setMeter(new Meter());
-        testCustomer.setSupplier(new Supplier());
+        testCustomer.setMeter(meter);
+        testCustomer.setSupplier(supplier);
 
 
         testCustomerDto = new CustomerDto();
@@ -111,13 +109,11 @@ class CustomerServiceTest {
     @Test
     void testCreateCustomer() {
         // Mocking dependencies
-        when(meterRepository.findById(anyLong())).thenReturn(Optional.of(new Meter()));
-        when(supplierRepository.findById(anyLong())).thenReturn(Optional.of(new Supplier()));
-        when(customerRepository.save(any(Customer.class))).thenReturn(new Customer());
+        when(meterRepository.findById(anyLong())).thenReturn(Optional.of(meter));
+        when(supplierRepository.findById(anyLong())).thenReturn(Optional.of(supplier));
+        when(customerRepository.save(any(Customer.class))).thenReturn(testCustomer);
         when(pricePerUnitRepository.findByUnitConsumed(anyDouble())).thenReturn(Optional.of(5.0));
 
-        when(modelMapper.getConfiguration()).thenReturn((Configuration) modelMapperConfig);
-        when(modelMapper.map(org.mockito.ArgumentMatchers.any(), org.mockito.ArgumentMatchers.any())).thenReturn(new Customer());
 
         Customer result = customerService.createCustomer(testCustomerDto);
 
@@ -137,12 +133,13 @@ class CustomerServiceTest {
         // Mock data
         Long customerId = 1L;
         when(customerRepository.findById(customerId)).thenReturn(Optional.of(testCustomer));
-        when(meterRepository.findById(anyLong())).thenReturn(Optional.of(new Meter()));
-        when(supplierRepository.findById(anyLong())).thenReturn(Optional.of(new Supplier()));
+        when(meterRepository.findById(anyLong())).thenReturn(Optional.of(meter));
+        when(supplierRepository.findById(anyLong())).thenReturn(Optional.of(supplier));
+        when(customerRepository.save(any(Customer.class))).thenReturn(testCustomer);
         when(pricePerUnitRepository.findByUnitConsumed(anyDouble())).thenReturn(Optional.of(5.0));
 
-        when(modelMapper.map(org.mockito.ArgumentMatchers.any(), org.mockito.ArgumentMatchers.any())).thenReturn(testCustomer);
-
+        TypeMap<CustomerDto, Customer> mockTypeMap = mock(TypeMap.class);
+        when(modelMapper.typeMap(CustomerDto.class, Customer.class)).thenReturn(mockTypeMap);
 
         Customer updatedCustomer = customerService.updateCustomer(customerId, testCustomerDto);
 
