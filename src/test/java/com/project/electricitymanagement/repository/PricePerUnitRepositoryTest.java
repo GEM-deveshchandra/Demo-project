@@ -11,6 +11,9 @@ import org.springframework.test.context.ActiveProfiles;
 import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * Test Class for PricePerUnit Repository.
+ */
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @ActiveProfiles("test")

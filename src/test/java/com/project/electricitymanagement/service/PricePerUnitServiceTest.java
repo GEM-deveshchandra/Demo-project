@@ -1,6 +1,5 @@
 package com.project.electricitymanagement.service;
 
-
 import com.project.electricitymanagement.dto.PricePerUnitDto;
 import com.project.electricitymanagement.entity.PricePerUnit;
 import com.project.electricitymanagement.exception.ResourceNotFoundException;
@@ -13,14 +12,20 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.ResponseEntity;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
+
+/**
+ * Test class for PricePerUnit Service.
+ */
 @ExtendWith(MockitoExtension.class)
 class PricePerUnitServiceTest {
 

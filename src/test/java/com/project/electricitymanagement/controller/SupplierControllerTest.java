@@ -106,7 +106,7 @@ public class SupplierControllerTest {
     @Test
     @DisplayName("Should update an existing supplier")
     void shouldUpdateSupplier() {
-        // Arrange
+
         SupplierDto supplierDto = new SupplierDto();
         supplierDto.setName("Updated Mahesh");
         supplierDto.setSupplierType("Urban");
@@ -118,10 +118,8 @@ public class SupplierControllerTest {
 
         when(supplierService.updateSupplier(anyLong(), any(SupplierDto.class))).thenReturn(updatedSupplier);
 
-        // Act
         ResponseEntity<Supplier> responseEntity = supplierController.updateSupplier(1L, supplierDto);
 
-        // Assert
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         Supplier returnedSupplier = responseEntity.getBody();
         assertNotNull(returnedSupplier);

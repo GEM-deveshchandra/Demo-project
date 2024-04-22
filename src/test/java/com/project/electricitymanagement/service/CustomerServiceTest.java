@@ -28,6 +28,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
+/**
+ * Test class for Customer Service.
+ */
 @ExtendWith(MockitoExtension.class)
 @ContextConfiguration(classes = com.project.electricitymanagement.config.ModelMapperConfig.class)
 class CustomerServiceTest {
@@ -44,18 +47,19 @@ class CustomerServiceTest {
     private ModelMapper modelMapper;
 
     @Mock
-    PricePerUnitRepository pricePerUnitRepository;
+    private PricePerUnitRepository pricePerUnitRepository;
     @InjectMocks
     private CustomerService customerService;
 
     private Customer testCustomer;
     private CustomerDto testCustomerDto;
-    Meter meter;
-    Supplier supplier;
+    private Meter meter;
+    private Supplier supplier;
+
     @BeforeEach
     void setUp() {
-        meter = new Meter(1L,2,234);
-        supplier = new Supplier(1L,"Danish","Urban");
+        meter = new Meter(1L, 2, 234);
+        supplier = new Supplier(1L, "Danish", "Urban");
         testCustomer = new Customer();
         testCustomer.setId(1L);
         testCustomer.setName("Rahul");
@@ -117,7 +121,6 @@ class CustomerServiceTest {
 
         Customer result = customerService.createCustomer(testCustomerDto);
 
-        // Assertions
         assertNotNull(result);
         assertEquals("Rahul", result.getName());
         assertEquals("Lucknow", result.getAddress());
@@ -130,7 +133,7 @@ class CustomerServiceTest {
 
     @Test
     void testUpdateCustomer() {
-        // Mock data
+
         Long customerId = 1L;
         when(customerRepository.findById(customerId)).thenReturn(Optional.of(testCustomer));
         when(meterRepository.findById(anyLong())).thenReturn(Optional.of(meter));
@@ -179,7 +182,7 @@ class CustomerServiceTest {
 
     @Test
     void testCalculateBillAmount() {
-        // Given
+
         double lastReading = 100.0;
         double currentReading = 150.0;
         double unitsConsumed = currentReading - lastReading;
@@ -192,11 +195,9 @@ class CustomerServiceTest {
         when(meterRepository.findById(1L)).thenReturn(Optional.of(meter));
         when(pricePerUnitRepository.findByUnitConsumed(unitsConsumed)).thenReturn(Optional.of(pricePerUnit));
 
-        // When
         double expectedBillAmount = (unitsConsumed * pricePerUnit) + minBillAmount;
         double actualBillAmount = customerService.calculateBillAmount(lastReading, currentReading, 1L);
 
-        // Then
         assertEquals(expectedBillAmount, actualBillAmount);
     }
 
@@ -204,8 +205,6 @@ class CustomerServiceTest {
     void testCalculateBillAmount_UnitConsumedNotFound() {
         double lastReading = 100.0;
         double currentReading = 150.0;
-
-
         when(pricePerUnitRepository.findByUnitConsumed(anyDouble())).thenReturn(Optional.empty());
 
         assertThrows(ResourceNotFoundException.class, () -> customerService.calculateBillAmount(lastReading, currentReading, 1L));
@@ -213,11 +212,10 @@ class CustomerServiceTest {
 
     @Test
     void testCalculateBillAmount_MinBillAmountNotFound() {
-        // Given
+
         double lastReading = 100.0;
         double currentReading = 150.0;
 
-        // When and Then
         assertThrows(ResourceNotFoundException.class, () -> customerService.calculateBillAmount(lastReading, currentReading, 1L));
     }
 }
