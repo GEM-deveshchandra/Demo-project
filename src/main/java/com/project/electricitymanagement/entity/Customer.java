@@ -43,6 +43,7 @@ public class Customer {
     /**
      * Date of establishing the connection.
      */
+    @NotNull
     private LocalDate connectionDate;
     /**
      * Last recorded reading on the meter.
