@@ -1,9 +1,9 @@
 
 insert ignore into meter (id, load_amount, min_bill_amount) values
-(1,'1',500 ),
-(2,'2',700 ),
-(3,'3',1000 ),
-(4,'>3',1250 );
+(1,1,500 ),
+(2,2,700 ),
+(3,3,1000 ),
+(4,3,1250 );
 
 insert ignore into price_per_unit (id, unit_range_lower, unit_range_upper,price) values
 (1,0,100 ,3 ),
