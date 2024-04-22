@@ -39,11 +39,11 @@ public class MeterControllerTest {
 
         Meter meter1 = new Meter();
         meter1.setId(1L);
-        meter1.setLoadAmount("10");
+        meter1.setLoadAmount(6);
 
         Meter meter2 = new Meter();
         meter2.setId(2L);
-        meter2.setLoadAmount("20");
+        meter2.setLoadAmount(5);
 
         when(meterService.getAllMeters()).thenReturn(Arrays.asList(meter1, meter2));
 
@@ -60,7 +60,7 @@ public class MeterControllerTest {
     void testGetMeterById() {
         Meter meter = new Meter();
         meter.setId(1L);
-        meter.setLoadAmount("15");
+        meter.setLoadAmount(4);
 
         when(meterService.getMeterById(anyLong())).thenReturn(meter);
 
@@ -70,7 +70,7 @@ public class MeterControllerTest {
         Meter fetchedMeter = responseEntity.getBody();
         assertNotNull(fetchedMeter);
         assertEquals(1L, fetchedMeter.getId());
-        assertEquals("15", fetchedMeter.getLoadAmount());
+        assertEquals(4, fetchedMeter.getLoadAmount());
     }
 
     @Test
@@ -78,11 +78,11 @@ public class MeterControllerTest {
     void testCreateMeter() {
 
         MeterDto meterDto = new MeterDto();
-        meterDto.setLoadAmount("25");
+        meterDto.setLoadAmount(7);
 
         Meter createdMeter = new Meter();
         createdMeter.setId(1L);
-        createdMeter.setLoadAmount("25");
+        createdMeter.setLoadAmount(7);
 
         when(meterService.createMeter(any(MeterDto.class))).thenReturn(createdMeter);
 
@@ -92,7 +92,7 @@ public class MeterControllerTest {
         Meter returnedMeter = responseEntity.getBody();
         assertNotNull(returnedMeter);
         assertEquals(1L, returnedMeter.getId());
-        assertEquals("25", returnedMeter.getLoadAmount());
+        assertEquals(7, returnedMeter.getLoadAmount());
     }
 
     @Test
@@ -100,11 +100,11 @@ public class MeterControllerTest {
     void testUpdateMeter() {
 
         MeterDto meterDto = new MeterDto();
-        meterDto.setLoadAmount("30");
+        meterDto.setLoadAmount(9);
 
         Meter updatedMeter = new Meter();
         updatedMeter.setId(1L);
-        updatedMeter.setLoadAmount("30");
+        updatedMeter.setLoadAmount(30);
 
         when(meterService.updateMeter(anyLong(), any(MeterDto.class))).thenReturn(updatedMeter);
 
@@ -114,7 +114,7 @@ public class MeterControllerTest {
         Meter returnedMeter = responseEntity.getBody();
         assertNotNull(returnedMeter);
         assertEquals(1L, returnedMeter.getId());
-        assertEquals("30", returnedMeter.getLoadAmount());
+        assertEquals(9, returnedMeter.getLoadAmount());
     }
 
     @Test

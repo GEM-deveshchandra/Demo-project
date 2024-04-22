@@ -39,7 +39,7 @@ class MeterServiceTest {
     void testCreateMeter() {
         // Given
         MeterDto meterDto = new MeterDto();
-        meterDto.setLoadAmount("50");
+        meterDto.setLoadAmount(11);
         meterDto.setMinBillAmount(100.0);
 
         Meter savedMeter = new Meter();
@@ -106,7 +106,7 @@ class MeterServiceTest {
         // Given
         Long id = 1L;
         MeterDto meterDto = new MeterDto();
-        meterDto.setLoadAmount("50");
+        meterDto.setLoadAmount(9);
         meterDto.setMinBillAmount(100.0);
 
         Meter existingMeter = new Meter();
@@ -134,7 +134,7 @@ class MeterServiceTest {
         // Given
         Long id = 1L;
         MeterDto meterDto = new MeterDto();
-        meterDto.setLoadAmount("50");
+        meterDto.setLoadAmount(7);
         meterDto.setMinBillAmount(100.0);
 
         when(meterRepository.findById(id)).thenReturn(Optional.empty());

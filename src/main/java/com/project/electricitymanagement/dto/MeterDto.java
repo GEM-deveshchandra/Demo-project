@@ -19,7 +19,7 @@ public class MeterDto {
      * Load amount on the meter.
      */
     @NotNull(message = "Load Amount is NULL")
-    private String loadAmount;
+    private int loadAmount;
     /**
      * Minimum bill amount corresponding to the load amount.
      */
