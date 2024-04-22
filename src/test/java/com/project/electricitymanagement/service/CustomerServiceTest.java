@@ -54,7 +54,7 @@ class CustomerServiceTest {
     Supplier supplier;
     @BeforeEach
     void setUp() {
-        meter = new Meter(1L,"2",234);
+        meter = new Meter(1L,2,234);
         supplier = new Supplier(1L,"Danish","Urban");
         testCustomer = new Customer();
         testCustomer.setId(1L);

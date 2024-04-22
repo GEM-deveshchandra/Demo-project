@@ -35,7 +35,7 @@ public class CustomerService {
     @Autowired
     private PricePerUnitRepository pricePerUnitRepository;
     @Autowired
-    ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
     /**
      * Retrieves list of all the customers in the database.
@@ -89,7 +89,7 @@ public class CustomerService {
 
         //If we consider that the connection date should only be set while creating a new customer, then while updating a customer, setting Connection date is skipped.
         modelMapper.typeMap(CustomerDto.class, Customer.class)
-                        .addMappings(mapper->mapper.skip(Customer::setConnectionDate));
+                        .addMappings(mapper -> mapper.skip(Customer::setConnectionDate));
         modelMapper.map(customerDetails, customer);
         double billAmount = calculateBillAmount(customerDetails.getLastReading(), customerDetails.getCurrentReading(), customer.getMeter().getId());
         customer.setBillAmount(billAmount);

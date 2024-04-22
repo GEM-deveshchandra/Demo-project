@@ -107,7 +107,7 @@ public class SupplierController {
         LOGGER.info(String.format("Request to delete supplier with id %d", id));
 
         supplierService.deleteSupplier(id);
-        LOGGER.info(String.format("Supplier deleted with id %d",id));
+        LOGGER.info(String.format("Supplier deleted with id %d", id));
 
         return ResponseEntity.ok().build();
     }

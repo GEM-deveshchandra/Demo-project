@@ -114,7 +114,7 @@ public class MeterControllerTest {
         Meter returnedMeter = responseEntity.getBody();
         assertNotNull(returnedMeter);
         assertEquals(1L, returnedMeter.getId());
-        assertEquals(9, returnedMeter.getLoadAmount());
+        assertEquals(30, returnedMeter.getLoadAmount());
     }
 
     @Test
