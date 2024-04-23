@@ -1,0 +1,2 @@
+2024-04-23 11:36:28.821 [http-nio-8080-exec-1] INFO  c.p.e.c.PricePerUnitController - Request for creating a new price per unit.
+2024-04-23 11:36:29.020 [http-nio-8080-exec-1] INFO  c.p.e.c.PricePerUnitController - New price per unit created with id 1
