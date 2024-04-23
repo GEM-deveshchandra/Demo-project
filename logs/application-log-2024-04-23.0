@@ -1,2 +1,47 @@
 2024-04-23 11:36:28.821 [http-nio-8080-exec-1] INFO  c.p.e.c.PricePerUnitController - Request for creating a new price per unit.
 2024-04-23 11:36:29.020 [http-nio-8080-exec-1] INFO  c.p.e.c.PricePerUnitController - New price per unit created with id 1
+2024-04-23 11:55:18.580 [main] INFO  c.p.e.controller.CustomerController - Request for fetching bill of customer with id 1
+2024-04-23 11:55:18.589 [main] INFO  c.p.e.controller.CustomerController - Fetched bill of customer with id 1
+2024-04-23 11:55:18.653 [main] INFO  c.p.e.controller.CustomerController - Request for customer with id 1
+2024-04-23 11:55:18.654 [main] INFO  c.p.e.controller.CustomerController - Fetched customer with id: 1
+2024-04-23 11:55:18.662 [main] INFO  c.p.e.controller.CustomerController - Request for fetching all customers
+2024-04-23 11:55:18.662 [main] INFO  c.p.e.controller.CustomerController - Fetched 2 customers
+2024-04-23 11:55:18.669 [main] INFO  c.p.e.controller.CustomerController - Request for updating customer with id 1
+2024-04-23 11:55:18.671 [main] INFO  c.p.e.controller.CustomerController - Updated customer with id 1
+2024-04-23 11:55:18.677 [main] INFO  c.p.e.controller.CustomerController - Request for creating a new customer
+2024-04-23 11:55:18.677 [main] INFO  c.p.e.controller.CustomerController - New customer created with id 1
+2024-04-23 11:55:18.684 [main] INFO  c.p.e.controller.CustomerController - Request to delete customer with id 1
+2024-04-23 11:55:18.684 [main] INFO  c.p.e.controller.CustomerController - Customer deleted with id 1
+2024-04-23 11:55:18.767 [main] INFO  c.p.e.controller.MeterController - Request to delete meter with id 1
+2024-04-23 11:55:18.771 [main] INFO  c.p.e.controller.MeterController - Meter deleted with id 1
+2024-04-23 11:55:18.780 [main] INFO  c.p.e.controller.MeterController - Request for updating meter with id 1
+2024-04-23 11:55:18.780 [main] INFO  c.p.e.controller.MeterController - Updated meter with id 1
+2024-04-23 11:55:18.786 [main] INFO  c.p.e.controller.MeterController - Request for creating a new meter
+2024-04-23 11:55:18.786 [main] INFO  c.p.e.controller.MeterController - New meter created with id 1
+2024-04-23 11:55:18.792 [main] INFO  c.p.e.controller.MeterController - Request for meter with id 1
+2024-04-23 11:55:18.792 [main] INFO  c.p.e.controller.MeterController - Fetched meter with id 1
+2024-04-23 11:55:18.798 [main] INFO  c.p.e.controller.MeterController - Request for fetching all meters
+2024-04-23 11:55:18.799 [main] INFO  c.p.e.controller.MeterController - Fetched 2 meters
+2024-04-23 11:55:18.844 [main] INFO  c.p.e.c.PricePerUnitController - Request to delete price per unit with id 1
+2024-04-23 11:55:18.846 [main] INFO  c.p.e.c.PricePerUnitController - Price per unit deleted with id 1
+2024-04-23 11:55:18.851 [main] INFO  c.p.e.c.PricePerUnitController - Request for price per unit with id 1
+2024-04-23 11:55:18.852 [main] INFO  c.p.e.c.PricePerUnitController - Fetched price per unit with id: 1
+2024-04-23 11:55:18.857 [main] INFO  c.p.e.c.PricePerUnitController - Request for updating price per unit with id 1
+2024-04-23 11:55:18.857 [main] INFO  c.p.e.c.PricePerUnitController - Updated price per unit with id 1
+2024-04-23 11:55:18.863 [main] INFO  c.p.e.c.PricePerUnitController - Request for fetching all prices per unit
+2024-04-23 11:55:18.863 [main] INFO  c.p.e.c.PricePerUnitController - Fetched 2 prices per unit
+2024-04-23 11:55:18.868 [main] INFO  c.p.e.c.PricePerUnitController - Request for creating a new price per unit.
+2024-04-23 11:55:18.869 [main] INFO  c.p.e.c.PricePerUnitController - New price per unit created with id 3
+2024-04-23 11:55:18.914 [main] INFO  c.p.e.controller.SupplierController - Request for creating a new supplier
+2024-04-23 11:55:18.914 [main] INFO  c.p.e.controller.SupplierController - New supplier created with id 3
+2024-04-23 11:55:18.918 [main] INFO  c.p.e.controller.SupplierController - Request for updating supplier with id 1
+2024-04-23 11:55:18.918 [main] INFO  c.p.e.controller.SupplierController - Updated supplier with id 1 
+2024-04-23 11:55:18.922 [main] INFO  c.p.e.controller.SupplierController - Request for fetching all suppliers
+2024-04-23 11:55:18.922 [main] INFO  c.p.e.controller.SupplierController - Fetched 2 suppliers
+2024-04-23 11:55:18.926 [main] INFO  c.p.e.controller.SupplierController - Request for supplier with id 1
+2024-04-23 11:55:18.926 [main] INFO  c.p.e.controller.SupplierController - Fetched supplier with id 1
+2024-04-23 11:55:18.929 [main] INFO  c.p.e.controller.SupplierController - Request to delete supplier with id 1
+2024-04-23 11:55:18.930 [main] INFO  c.p.e.controller.SupplierController - Supplier deleted with id 1
+2024-04-23 11:55:29.918 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-23 11:55:29.924 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-04-23 11:55:29.940 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
