@@ -102,11 +102,11 @@ public class MeterController {
      * @return Status of operation: 200 if successful, or 404 if meter is not found.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteMeter(@PathVariable(value = "id") Long id) {
+    public ResponseEntity<Object> deleteMeter(@PathVariable(value = "id") final Long id) {
         LOGGER.info(String.format("Request to delete meter with id %d", id));
 
         meterService.deleteMeter(id);
-        LOGGER.info(String.format("Meter deleted with id %d",id));
+        LOGGER.info(String.format("Meter deleted with id %d", id));
 
         return ResponseEntity.ok().build();
     }

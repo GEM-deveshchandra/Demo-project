@@ -100,7 +100,7 @@ public class PricePerUnitController {
      * @return Status of operation: 200 if successful, or 404 if meter is not found.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deletePricePerUnit(@PathVariable(value = "id") Long id) {
+    public ResponseEntity<Object> deletePricePerUnit(@PathVariable(value = "id") final Long id) {
         LOGGER.info(String.format("Request to delete price per unit with id %d", id));
 
         pricePerUnitService.deletePricePerUnit(id);
