@@ -65,7 +65,7 @@ class CustomerServiceTest {
         testCustomer.setId(1L);
         testCustomer.setName("Rahul");
         testCustomer.setAddress("Lucknow");
-        testCustomer.setConnectionDate(LocalDate.of(2022, 1, 1));
+        testCustomer.setConnectionDate(LocalDate.of(2024, 1, 1));
         testCustomer.setLastReading(100.0);
         testCustomer.setCurrentReading(150.0);
         testCustomer.setMeter(meter);
@@ -75,7 +75,7 @@ class CustomerServiceTest {
         testCustomerDto = new CustomerDto();
         testCustomerDto.setName("Rahul");
         testCustomerDto.setAddress("Lucknow");
-        testCustomerDto.setConnectionDate(LocalDate.of(2022, 1, 1));
+        testCustomerDto.setConnectionDate(LocalDate.of(2024, 1, 1));
         testCustomerDto.setLastReading(100.0);
         testCustomerDto.setCurrentReading(150.0);
         testCustomerDto.setMeterId(1L);
@@ -125,7 +125,7 @@ class CustomerServiceTest {
         assertNotNull(result);
         assertEquals("Rahul", result.getName());
         assertEquals("Lucknow", result.getAddress());
-        assertEquals(LocalDate.of(2022, 1, 1), result.getConnectionDate());
+        assertEquals(LocalDate.of(2024, 1, 1), result.getConnectionDate());
         assertEquals(100.0, result.getLastReading());
         assertEquals(150.0, result.getCurrentReading());
         assertEquals(1L, result.getMeter().getId());
@@ -150,7 +150,7 @@ class CustomerServiceTest {
         assertNotNull(updatedCustomer);
         assertEquals("Rahul", updatedCustomer.getName());
         assertEquals("Lucknow", updatedCustomer.getAddress());
-        assertEquals(LocalDate.of(2022, 1, 1), updatedCustomer.getConnectionDate());
+        assertEquals(LocalDate.of(2024, 1, 1), updatedCustomer.getConnectionDate());
         assertEquals(100.0, updatedCustomer.getLastReading());
         assertEquals(150.0, updatedCustomer.getCurrentReading());
         assertEquals(1L, updatedCustomer.getMeter().getId());
@@ -171,7 +171,7 @@ class CustomerServiceTest {
         ResponseEntity<Object> result = customerService.deleteCustomerById(1L);
 
         assertNotNull(result);
-        assertEquals(200, result.getStatusCode());
+        assertEquals(200, result.getStatusCode().value());
     }
 
     @Test

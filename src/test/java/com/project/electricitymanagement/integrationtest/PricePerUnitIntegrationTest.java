@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.List;
@@ -26,7 +27,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * Integration test for PricePerUnit feature
+ */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ActiveProfiles("test")
 @AutoConfigureMockMvc
 public class PricePerUnitIntegrationTest extends AbstractContainerTest {
 
@@ -43,11 +48,11 @@ public class PricePerUnitIntegrationTest extends AbstractContainerTest {
 
     @BeforeEach
     void resetDatabase() {
-        pricePerUnitRepository.deleteAll();
+        pricePerUnitRepository.deleteAll();// Deletes all data from the price-per-unit table
     }
 
     @Test
-    public void testCreatePricePerUnit_ValidInput() throws Exception {
+     void testCreatePricePerUnit_ValidInput() throws Exception {
         PricePerUnitDto pricePerUnitDto = new PricePerUnitDto();
         pricePerUnitDto.setUnitRangeLower(0);
         pricePerUnitDto.setUnitRangeUpper(100);
@@ -65,7 +70,7 @@ public class PricePerUnitIntegrationTest extends AbstractContainerTest {
     }
 
     @Test
-    public void testCreatePricePerUnit_InvalidInput() throws Exception {
+     void testCreatePricePerUnit_InvalidInput() throws Exception {
         PricePerUnitDto pricePerUnitDto = new PricePerUnitDto();
         pricePerUnitDto.setUnitRangeUpper(100);
 
@@ -76,7 +81,7 @@ public class PricePerUnitIntegrationTest extends AbstractContainerTest {
     }
 
     @Test
-    public void testGetAllPricePerUnit() throws Exception {
+     void testGetAllPricePerUnit() throws Exception {
         PricePerUnit pricePerUnit1 = new PricePerUnit();
         pricePerUnit1.setUnitRangeLower(0);
         pricePerUnit1.setUnitRangeUpper(100);
@@ -100,7 +105,7 @@ public class PricePerUnitIntegrationTest extends AbstractContainerTest {
     }
 
     @Test
-    public void testGetPricePerUnitById() throws Exception {
+     void testGetPricePerUnitById() throws Exception {
 
         PricePerUnit pricePerUnit = new PricePerUnit();
         pricePerUnit.setUnitRangeLower(0);
@@ -118,7 +123,7 @@ public class PricePerUnitIntegrationTest extends AbstractContainerTest {
     }
 
     @Test
-    public void testGetPricePerUnitById_NotFound() throws Exception {
+     void testGetPricePerUnitById_NotFound() throws Exception {
         mockMvc.perform(get(PRICE_PER_UNIT_API_URL + "/{id}", 100))
                 .andExpect(status().isNotFound());
     }
@@ -148,7 +153,7 @@ public class PricePerUnitIntegrationTest extends AbstractContainerTest {
     }
 
     @Test
-    public void testUpdatePricePerUnit_NotFound() throws Exception {
+     void testUpdatePricePerUnit_NotFound() throws Exception {
         PricePerUnitDto updatedPricePerUnitDto = new PricePerUnitDto();
         updatedPricePerUnitDto.setUnitRangeLower(0);
         updatedPricePerUnitDto.setUnitRangeUpper(200);
@@ -161,7 +166,7 @@ public class PricePerUnitIntegrationTest extends AbstractContainerTest {
     }
 
     @Test
-    public void testDeletePricePerUnit() throws Exception {
+     void testDeletePricePerUnit() throws Exception {
         PricePerUnit pricePerUnit = new PricePerUnit();
         pricePerUnit.setUnitRangeLower(0);
         pricePerUnit.setUnitRangeUpper(100);
@@ -175,7 +180,7 @@ public class PricePerUnitIntegrationTest extends AbstractContainerTest {
     }
 
     @Test
-    public void testDeletePricePerUnit_NotFound() throws Exception {
+     void testDeletePricePerUnit_NotFound() throws Exception {
         mockMvc.perform(delete(PRICE_PER_UNIT_API_URL + "/{id}", 100))
                 .andExpect(status().isNotFound());
     }

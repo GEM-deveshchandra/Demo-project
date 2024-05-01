@@ -16,8 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
-
 import java.time.LocalDate;
 import java.util.List;
 import static org.hamcrest.Matchers.greaterThan;
@@ -33,7 +33,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * Integration test for Customer feature
+ */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ActiveProfiles("test")
 @AutoConfigureMockMvc
 public class CustomerIntegrationTest extends AbstractContainerTest {
 
@@ -76,7 +80,7 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
 
 
         Supplier supplier = new Supplier();
-        supplier.setName("Danish");
+        supplier.setName("Ramesh");
         supplier.setSupplierType("Urban");
         savedSupplier = supplierRepository.save(supplier);
 
@@ -88,7 +92,7 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
     }
 
     @Test
-    public void testCreateCustomer_ValidInput() throws Exception {
+     void testCreateCustomer_ValidInput() throws Exception {
 
         CustomerDto customerDto = new CustomerDto();
         customerDto.setName("Rahul");
@@ -106,12 +110,13 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id", notNullValue()))
                 .andExpect(jsonPath("$.name", is(customerDto.getName())))
+                .andExpect(jsonPath("$.connectionDate",is(customerDto.getConnectionDate())))
                 .andExpect(jsonPath("$.address",is(customerDto.getAddress())))
                 .andExpect(jsonPath("$.billAmount", greaterThan(0.0)));
     }
 
     @Test
-    public void testCreateCustomer_InvalidInput() throws Exception {
+     void testCreateCustomer_InvalidInput() throws Exception {
         CustomerDto customerDto = new CustomerDto();
         customerDto.setName("Rahul");
 
@@ -148,11 +153,15 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(jsonPath("$[0].name", is(customer1.getName())))
-                .andExpect(jsonPath("$[1].name", is(customer2.getName())));
+                .andExpect(jsonPath("$[0].address",is(customer1.getAddress())))
+                .andExpect(jsonPath("$[0].connectionDate",is(customer1.getConnectionDate())))
+                .andExpect(jsonPath("$[1].name", is(customer2.getName())))
+                .andExpect(jsonPath("$[1].address",is(customer2.getAddress())))
+                .andExpect(jsonPath("$[1].connectionDate",is(customer2.getConnectionDate())));
     }
 
     @Test
-    public void testGetCustomerById() throws Exception {
+     void testGetCustomerById() throws Exception {
         Customer customer = new Customer();
         customer.setName("Avaneesh");
         customer.setAddress("Lucknow");
@@ -167,18 +176,20 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
         mockMvc.perform(get(CUSTOMER_API_URL + "/{id}", savedCustomer.getId()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.id", is(savedCustomer.getId().intValue())))
-                .andExpect(jsonPath("$.name", is(savedCustomer.getName())));
+                .andExpect(jsonPath("$.id", is(savedCustomer.getId())))
+                .andExpect(jsonPath("$.name", is(savedCustomer.getName())))
+                .andExpect(jsonPath("$address",is(savedCustomer.getAddress())))
+                .andExpect(jsonPath("$connectionDate",is(savedCustomer.getConnectionDate())));
     }
 
     @Test
-    public void testGetCustomerById_NotFound() throws Exception {
+     void testGetCustomerById_NotFound() throws Exception {
         mockMvc.perform(get(CUSTOMER_API_URL + "/{id}", 100))
                 .andExpect(status().isNotFound());
     }
 
     @Test
-    public void testUpdateCustomer() throws Exception {
+     void testUpdateCustomer() throws Exception {
         Customer customer = new Customer();
         customer.setName("Avaneesh");
         customer.setAddress("Lucknow");
@@ -204,8 +215,10 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.id", is(savedCustomer.getId().intValue())))
-                .andExpect(jsonPath("$.name", is(updatedCustomerDto.getName())));
+                .andExpect(jsonPath("$.id", is(savedCustomer.getId())))
+                .andExpect(jsonPath("$.name", is(updatedCustomerDto.getName())))
+                .andExpect(jsonPath("$address",is(updatedCustomerDto.getAddress())))
+                .andExpect(jsonPath("$connectionDate",is(updatedCustomerDto.getConnectionDate())));
     }
 
     @Test
@@ -226,7 +239,7 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
     }
 
     @Test
-    public void testDeleteCustomer() throws Exception {
+     void testDeleteCustomer() throws Exception {
         Customer customer = new Customer();
         customer.setName("Mahesh");
         customer.setAddress("Lucknow");
@@ -244,12 +257,12 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
     }
 
     @Test
-    public void testDeleteCustomer_NotFound() throws Exception {
+     void testDeleteCustomer_NotFound() throws Exception {
         mockMvc.perform(delete(CUSTOMER_API_URL + "/{id}", 100))
                 .andExpect(status().isNotFound());
     }
     @Test
-    public void testGetCustomerBillById() throws Exception {
+     void testGetCustomerBillById() throws Exception {
         Customer customer = new Customer();
         customer.setName("Mahesh");
         customer.setAddress("Lucknow");
@@ -267,7 +280,7 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
     }
 
     @Test
-    public void testGetCustomerBillById_NotFound() throws Exception {
+     void testGetCustomerBillById_NotFound() throws Exception {
         mockMvc.perform(get(CUSTOMER_API_URL + "/{id}/bill", 100))
                 .andExpect(status().isNotFound());
     }

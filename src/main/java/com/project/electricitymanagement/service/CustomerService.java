@@ -123,7 +123,7 @@ public class CustomerService {
         double pricePerUnit = getPricePerUnit(unitsConsumed);
         double minBillAmount = getMinBillAmount(meterId);
         LOGGER.info(String.format("Calculating bill of customer having meter id %d", meterId));
-        return (double)((unitsConsumed * pricePerUnit) + minBillAmount);
+        return (double) ((unitsConsumed * pricePerUnit) + minBillAmount);
     }
 
     /**

@@ -3,6 +3,7 @@ package com.project.electricitymanagement.integrationtest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project.electricitymanagement.dto.SupplierDto;
 import com.project.electricitymanagement.entity.Supplier;
+import com.project.electricitymanagement.repository.CustomerRepository;
 import com.project.electricitymanagement.repository.SupplierRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,13 +11,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+/**
+ * Integration test for Supplier feature
+ */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ActiveProfiles("test")
 @AutoConfigureMockMvc
 public class SupplierIntegrationTest extends AbstractContainerTest {
 
@@ -30,15 +36,18 @@ public class SupplierIntegrationTest extends AbstractContainerTest {
 
     @Autowired
     private SupplierRepository supplierRepository;
+    @Autowired
+    private CustomerRepository customerRepository;
 
     @BeforeEach
     void resetDatabase() {
+        customerRepository.deleteAll();// to satisfy foreign key constraint
         supplierRepository.deleteAll(); // Deletes all data from the supplier table
     }
 
 
     @Test
-    public void testCreateSupplier() throws Exception {
+     void testCreateSupplier() throws Exception {
         SupplierDto supplierDto = new SupplierDto();
         supplierDto.setName("Mahesh");
         supplierDto.setSupplierType("Urban");
@@ -53,7 +62,7 @@ public class SupplierIntegrationTest extends AbstractContainerTest {
                 .andExpect(jsonPath("$.supplierType", is(supplierDto.getSupplierType())));
     }
     @Test
-    public void testCreateSupplier_InvalidInput() throws Exception {
+     void testCreateSupplier_InvalidInput() throws Exception {
         SupplierDto supplierDto = new SupplierDto();
         supplierDto.setSupplierType("Urban");
 
@@ -63,7 +72,7 @@ public class SupplierIntegrationTest extends AbstractContainerTest {
                 .andExpect(status().isBadRequest());
     }
     @Test
-    public void testGetAllSuppliers() throws Exception {
+     void testGetAllSuppliers() throws Exception {
         Supplier supplier1 = new Supplier();
         supplier1.setName("Ramesh");
         supplier1.setSupplierType("Urban");
@@ -85,7 +94,7 @@ public class SupplierIntegrationTest extends AbstractContainerTest {
     }
 
     @Test
-    public void testGetSupplierById() throws Exception {
+     void testGetSupplierById() throws Exception {
         Supplier supplier = new Supplier();
         supplier.setName("Mahesh");
         supplier.setSupplierType("Urban");
@@ -99,14 +108,14 @@ public class SupplierIntegrationTest extends AbstractContainerTest {
                 .andExpect(jsonPath("$.supplierType", is(savedSupplier.getSupplierType())));
     }
     @Test
-    public void testGetSupplierById_NotFound() throws Exception {
-        // Non-existing supplier
+     void testGetSupplierById_NotFound() throws Exception {
+
         mockMvc.perform(get(SUPPLIER_API_URL+"/{id}", 100)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
     @Test
-    public void testUpdateSupplier() throws Exception {
+     void testUpdateSupplier() throws Exception {
         Supplier supplier = new Supplier();
         supplier.setName("Mahesh");
         supplier.setSupplierType("Urban");
@@ -126,8 +135,8 @@ public class SupplierIntegrationTest extends AbstractContainerTest {
                 .andExpect(jsonPath("$.supplierType", is(updatedSupplierDto.getSupplierType())));
     }
     @Test
-    public void testUpdateSupplier_NotFound() throws Exception {
-        // Non-existing supplier
+     void testUpdateSupplier_NotFound() throws Exception {
+
         SupplierDto updatedSupplierDto = new SupplierDto();
         updatedSupplierDto.setName("Mahesh");
         updatedSupplierDto.setSupplierType("Rural");
@@ -138,7 +147,7 @@ public class SupplierIntegrationTest extends AbstractContainerTest {
                 .andExpect(status().isNotFound());
     }
     @Test
-    public void testDeleteSupplier() throws Exception {
+     void testDeleteSupplier() throws Exception {
         Supplier supplier = new Supplier();
         supplier.setName("Mahesh");
         supplier.setSupplierType("Urban");
@@ -150,8 +159,8 @@ public class SupplierIntegrationTest extends AbstractContainerTest {
         assertFalse(supplierRepository.existsById(savedSupplier.getId()));
     }
     @Test
-    public void testDeleteSupplier_NotFound() throws Exception {
-        // Non-existing supplier
+     void testDeleteSupplier_NotFound() throws Exception {
+
         mockMvc.perform(delete(SUPPLIER_API_URL+"/{id}", 100))
                 .andExpect(status().isNotFound());
     }

@@ -10,10 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author Devesh.Chandra
  */
-@OpenAPIDefinition(info =@Info(
-        title="Electricity Management Application",
+@OpenAPIDefinition(info = @Info(
+        title = "Electricity Management Application",
         description = "SpringBoot Application for Electricity Management",
-        version ="v1.0")
+        version = "v1.0")
 )
 @SpringBootApplication
 public class ElectricityManagementApplication {
