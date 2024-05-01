@@ -1,0 +1,393 @@
+2024-05-03 12:15:31.899 [main] INFO  c.p.e.controller.SupplierController - Request for creating a new supplier
+2024-05-03 12:15:31.939 [main] INFO  c.p.e.controller.SupplierController - New supplier created with id 3
+2024-05-03 12:15:32.085 [main] INFO  c.p.e.controller.SupplierController - Request for updating supplier with id 1
+2024-05-03 12:15:32.090 [main] INFO  c.p.e.controller.SupplierController - Updated supplier with id 1 
+2024-05-03 12:15:32.144 [main] INFO  c.p.e.controller.SupplierController - Request for fetching all suppliers
+2024-05-03 12:15:32.145 [main] INFO  c.p.e.controller.SupplierController - Fetched 2 suppliers
+2024-05-03 12:15:32.152 [main] INFO  c.p.e.controller.SupplierController - Request for supplier with id 1
+2024-05-03 12:15:32.152 [main] INFO  c.p.e.controller.SupplierController - Fetched supplier with id 1
+2024-05-03 12:15:32.162 [main] INFO  c.p.e.controller.SupplierController - Request to delete supplier with id 1
+2024-05-03 12:15:32.163 [main] INFO  c.p.e.controller.SupplierController - Supplier deleted with id 1
+2024-05-03 12:15:32.300 [main] INFO  c.p.e.controller.CustomerController - Request for fetching bill of customer with id 1
+2024-05-03 12:15:32.301 [main] INFO  c.p.e.controller.CustomerController - Fetched bill of customer with id 1
+2024-05-03 12:15:32.309 [main] INFO  c.p.e.controller.CustomerController - Request for customer with id 1
+2024-05-03 12:15:32.311 [main] INFO  c.p.e.controller.CustomerController - Fetched customer with id: 1
+2024-05-03 12:15:32.320 [main] INFO  c.p.e.controller.CustomerController - Request for fetching all customers
+2024-05-03 12:15:32.324 [main] INFO  c.p.e.controller.CustomerController - Fetched 2 customers
+2024-05-03 12:15:32.334 [main] INFO  c.p.e.controller.CustomerController - Request for updating customer with id 1
+2024-05-03 12:15:32.335 [main] INFO  c.p.e.controller.CustomerController - Updated customer with id 1
+2024-05-03 12:15:32.343 [main] INFO  c.p.e.controller.CustomerController - Request for creating a new customer
+2024-05-03 12:15:32.344 [main] INFO  c.p.e.controller.CustomerController - New customer created with id 1
+2024-05-03 12:15:32.348 [main] INFO  c.p.e.controller.CustomerController - Request to delete customer with id 1
+2024-05-03 12:15:32.349 [main] INFO  c.p.e.controller.CustomerController - Customer deleted with id 1
+2024-05-03 12:15:33.308 [main] INFO  c.p.e.controller.MeterController - Request to delete meter with id 1
+2024-05-03 12:15:33.311 [main] INFO  c.p.e.controller.MeterController - Meter deleted with id 1
+2024-05-03 12:15:33.317 [main] INFO  c.p.e.controller.MeterController - Request for updating meter with id 1
+2024-05-03 12:15:33.318 [main] INFO  c.p.e.controller.MeterController - Updated meter with id 1
+2024-05-03 12:15:33.326 [main] INFO  c.p.e.controller.MeterController - Request for creating a new meter
+2024-05-03 12:15:33.327 [main] INFO  c.p.e.controller.MeterController - New meter created with id 1
+2024-05-03 12:15:33.333 [main] INFO  c.p.e.controller.MeterController - Request for meter with id 1
+2024-05-03 12:15:33.333 [main] INFO  c.p.e.controller.MeterController - Fetched meter with id 1
+2024-05-03 12:15:33.341 [main] INFO  c.p.e.controller.MeterController - Request for fetching all meters
+2024-05-03 12:15:33.342 [main] INFO  c.p.e.controller.MeterController - Fetched 2 meters
+2024-05-03 12:16:03.201 [main] INFO  c.p.e.c.PricePerUnitController - Request to delete price per unit with id 1
+2024-05-03 12:16:03.203 [main] INFO  c.p.e.c.PricePerUnitController - Price per unit deleted with id 1
+2024-05-03 12:16:03.208 [main] INFO  c.p.e.c.PricePerUnitController - Request for price per unit with id 1
+2024-05-03 12:16:03.208 [main] INFO  c.p.e.c.PricePerUnitController - Fetched price per unit with id: 1
+2024-05-03 12:16:03.213 [main] INFO  c.p.e.c.PricePerUnitController - Request for updating price per unit with id 1
+2024-05-03 12:16:03.213 [main] INFO  c.p.e.c.PricePerUnitController - Updated price per unit with id 1
+2024-05-03 12:16:03.216 [main] INFO  c.p.e.c.PricePerUnitController - Request for fetching all prices per unit
+2024-05-03 12:16:03.217 [main] INFO  c.p.e.c.PricePerUnitController - Fetched 2 prices per unit
+2024-05-03 12:16:03.221 [main] INFO  c.p.e.c.PricePerUnitController - Request for creating a new price per unit.
+2024-05-03 12:16:03.221 [main] INFO  c.p.e.c.PricePerUnitController - New price per unit created with id 3
+2024-05-03 12:16:06.487 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-05-03 12:16:06.494 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-05-03 12:16:06.509 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-05-03 12:16:34.186 [main] INFO  c.p.e.controller.SupplierController - Request for creating a new supplier
+2024-05-03 12:16:34.194 [main] INFO  c.p.e.controller.SupplierController - New supplier created with id 3
+2024-05-03 12:16:34.268 [main] INFO  c.p.e.controller.SupplierController - Request for updating supplier with id 1
+2024-05-03 12:16:34.269 [main] INFO  c.p.e.controller.SupplierController - Updated supplier with id 1 
+2024-05-03 12:16:34.275 [main] INFO  c.p.e.controller.SupplierController - Request for fetching all suppliers
+2024-05-03 12:16:34.276 [main] INFO  c.p.e.controller.SupplierController - Fetched 2 suppliers
+2024-05-03 12:16:34.282 [main] INFO  c.p.e.controller.SupplierController - Request for supplier with id 1
+2024-05-03 12:16:34.282 [main] INFO  c.p.e.controller.SupplierController - Fetched supplier with id 1
+2024-05-03 12:16:34.287 [main] INFO  c.p.e.controller.SupplierController - Request to delete supplier with id 1
+2024-05-03 12:16:34.288 [main] INFO  c.p.e.controller.SupplierController - Supplier deleted with id 1
+2024-05-03 12:16:34.374 [main] INFO  c.p.e.controller.CustomerController - Request for fetching bill of customer with id 1
+2024-05-03 12:16:34.375 [main] INFO  c.p.e.controller.CustomerController - Fetched bill of customer with id 1
+2024-05-03 12:16:34.381 [main] INFO  c.p.e.controller.CustomerController - Request for customer with id 1
+2024-05-03 12:16:34.382 [main] INFO  c.p.e.controller.CustomerController - Fetched customer with id: 1
+2024-05-03 12:16:34.389 [main] INFO  c.p.e.controller.CustomerController - Request for fetching all customers
+2024-05-03 12:16:34.389 [main] INFO  c.p.e.controller.CustomerController - Fetched 2 customers
+2024-05-03 12:16:34.396 [main] INFO  c.p.e.controller.CustomerController - Request for updating customer with id 1
+2024-05-03 12:16:34.396 [main] INFO  c.p.e.controller.CustomerController - Updated customer with id 1
+2024-05-03 12:16:34.401 [main] INFO  c.p.e.controller.CustomerController - Request for creating a new customer
+2024-05-03 12:16:34.401 [main] INFO  c.p.e.controller.CustomerController - New customer created with id 1
+2024-05-03 12:16:34.406 [main] INFO  c.p.e.controller.CustomerController - Request to delete customer with id 1
+2024-05-03 12:16:34.406 [main] INFO  c.p.e.controller.CustomerController - Customer deleted with id 1
+2024-05-03 12:16:34.889 [main] INFO  c.p.e.controller.MeterController - Request to delete meter with id 1
+2024-05-03 12:16:34.891 [main] INFO  c.p.e.controller.MeterController - Meter deleted with id 1
+2024-05-03 12:16:34.895 [main] INFO  c.p.e.controller.MeterController - Request for updating meter with id 1
+2024-05-03 12:16:34.895 [main] INFO  c.p.e.controller.MeterController - Updated meter with id 1
+2024-05-03 12:16:34.900 [main] INFO  c.p.e.controller.MeterController - Request for creating a new meter
+2024-05-03 12:16:34.900 [main] INFO  c.p.e.controller.MeterController - New meter created with id 1
+2024-05-03 12:16:34.904 [main] INFO  c.p.e.controller.MeterController - Request for meter with id 1
+2024-05-03 12:16:34.904 [main] INFO  c.p.e.controller.MeterController - Fetched meter with id 1
+2024-05-03 12:16:34.909 [main] INFO  c.p.e.controller.MeterController - Request for fetching all meters
+2024-05-03 12:16:34.910 [main] INFO  c.p.e.controller.MeterController - Fetched 2 meters
+2024-05-03 12:17:11.523 [main] INFO  c.p.e.controller.SupplierController - Request for updating supplier with id 1
+2024-05-03 12:17:11.587 [main] INFO  c.p.e.controller.SupplierController - Updated supplier with id 1 
+2024-05-03 12:17:11.801 [main] INFO  c.p.e.controller.SupplierController - Request for creating a new supplier
+2024-05-03 12:17:11.814 [main] INFO  c.p.e.controller.SupplierController - New supplier created with id 2
+2024-05-03 12:17:11.866 [main] INFO  c.p.e.controller.SupplierController - Request to delete supplier with id 100
+2024-05-03 12:17:11.884 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Supplier not found with id : '100', path=uri=/api/suppliers/100)
+2024-05-03 12:17:11.952 [main] INFO  c.p.e.controller.SupplierController - Request for fetching all suppliers
+2024-05-03 12:17:11.965 [main] INFO  c.p.e.controller.SupplierController - Fetched 2 suppliers
+2024-05-03 12:17:12.085 [main] INFO  c.p.e.controller.SupplierController - Request for supplier with id 5
+2024-05-03 12:17:12.095 [main] INFO  c.p.e.controller.SupplierController - Fetched supplier with id 5
+2024-05-03 12:17:12.151 [main] INFO  c.p.e.controller.SupplierController - Request to delete supplier with id 6
+2024-05-03 12:17:12.189 [main] INFO  c.p.e.controller.SupplierController - Supplier deleted with id 6
+2024-05-03 12:17:12.772 [main] INFO  c.p.e.controller.SupplierController - Request for updating supplier with id 100
+2024-05-03 12:17:12.783 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Supplier not found with id : '100', path=uri=/api/suppliers/100)
+2024-05-03 12:17:12.812 [main] INFO  c.p.e.controller.SupplierController - Request for supplier with id 100
+2024-05-03 12:17:12.824 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Supplier not found with id : '100', path=uri=/api/suppliers/100)
+2024-05-03 12:17:15.335 [main] INFO  c.p.e.c.PricePerUnitController - Request to delete price per unit with id 1
+2024-05-03 12:17:15.337 [main] INFO  c.p.e.c.PricePerUnitController - Price per unit deleted with id 1
+2024-05-03 12:17:15.342 [main] INFO  c.p.e.c.PricePerUnitController - Request for price per unit with id 1
+2024-05-03 12:17:15.342 [main] INFO  c.p.e.c.PricePerUnitController - Fetched price per unit with id: 1
+2024-05-03 12:17:15.346 [main] INFO  c.p.e.c.PricePerUnitController - Request for updating price per unit with id 1
+2024-05-03 12:17:15.346 [main] INFO  c.p.e.c.PricePerUnitController - Updated price per unit with id 1
+2024-05-03 12:17:15.352 [main] INFO  c.p.e.c.PricePerUnitController - Request for fetching all prices per unit
+2024-05-03 12:17:15.352 [main] INFO  c.p.e.c.PricePerUnitController - Fetched 2 prices per unit
+2024-05-03 12:17:15.358 [main] INFO  c.p.e.c.PricePerUnitController - Request for creating a new price per unit.
+2024-05-03 12:17:15.358 [main] INFO  c.p.e.c.PricePerUnitController - New price per unit created with id 3
+2024-05-03 12:17:17.196 [main] INFO  c.p.e.c.PricePerUnitController - Request for updating price per unit with id 100
+2024-05-03 12:17:17.211 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=PricePerUnit not found with id : '100', path=uri=/api/price-per-unit/100)
+2024-05-03 12:17:17.233 [main] INFO  c.p.e.c.PricePerUnitController - Request for price per unit with id 100
+2024-05-03 12:17:17.245 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=PricePerUnit not found with id : '100', path=uri=/api/price-per-unit/100)
+2024-05-03 12:17:17.305 [main] INFO  c.p.e.c.PricePerUnitController - Request for creating a new price per unit.
+2024-05-03 12:17:17.321 [main] INFO  c.p.e.c.PricePerUnitController - New price per unit created with id 7
+2024-05-03 12:17:17.367 [main] INFO  c.p.e.c.PricePerUnitController - Request to delete price per unit with id 100
+2024-05-03 12:17:17.378 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=PricePerUnit not found with id : '100', path=uri=/api/price-per-unit/100)
+2024-05-03 12:17:17.413 [main] INFO  c.p.e.c.PricePerUnitController - Request to delete price per unit with id 8
+2024-05-03 12:17:17.440 [main] INFO  c.p.e.c.PricePerUnitController - Price per unit deleted with id 8
+2024-05-03 12:17:17.490 [main] INFO  c.p.e.c.PricePerUnitController - Request for price per unit with id 9
+2024-05-03 12:17:17.502 [main] INFO  c.p.e.c.PricePerUnitController - Fetched price per unit with id: 9
+2024-05-03 12:17:17.544 [main] INFO  c.p.e.c.PricePerUnitController - Request for updating price per unit with id 10
+2024-05-03 12:17:17.567 [main] INFO  c.p.e.c.PricePerUnitController - Updated price per unit with id 10
+2024-05-03 12:17:17.610 [main] INFO  c.p.e.c.PricePerUnitController - Request for fetching all prices per unit
+2024-05-03 12:17:17.621 [main] INFO  c.p.e.c.PricePerUnitController - Fetched 2 prices per unit
+2024-05-03 12:17:18.145 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-05-03 12:17:18.149 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-05-03 12:17:18.164 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-05-03 12:17:18.232 [main] INFO  c.p.e.controller.MeterController - Request to delete meter with id 5
+2024-05-03 12:17:18.260 [main] INFO  c.p.e.controller.MeterController - Meter deleted with id 5
+2024-05-03 12:17:18.317 [main] INFO  c.p.e.controller.MeterController - Request for updating meter with id 6
+2024-05-03 12:17:18.338 [main] INFO  c.p.e.controller.MeterController - Updated meter with id 6
+2024-05-03 12:17:18.370 [main] INFO  c.p.e.controller.MeterController - Request for creating a new meter
+2024-05-03 12:17:18.381 [main] INFO  c.p.e.controller.MeterController - New meter created with id 7
+2024-05-03 12:17:18.418 [main] INFO  c.p.e.controller.MeterController - Request for updating meter with id 100
+2024-05-03 12:17:18.428 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Meter not found with id : '100', path=uri=/api/meters/100)
+2024-05-03 12:17:18.460 [main] INFO  c.p.e.controller.MeterController - Request for meter with id 8
+2024-05-03 12:17:18.470 [main] INFO  c.p.e.controller.MeterController - Fetched meter with id 8
+2024-05-03 12:17:18.516 [main] INFO  c.p.e.controller.MeterController - Request for fetching all meters
+2024-05-03 12:17:18.525 [main] INFO  c.p.e.controller.MeterController - Fetched 2 meters
+2024-05-03 12:17:18.561 [main] INFO  c.p.e.controller.MeterController - Request to delete meter with id 100
+2024-05-03 12:17:18.569 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Meter not found with id : '100', path=uri=/api/meters/100)
+2024-05-03 12:17:18.616 [main] INFO  c.p.e.controller.MeterController - Request for meter with id 100
+2024-05-03 12:17:18.628 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Meter not found with id : '100', path=uri=/api/meters/100)
+2024-05-03 12:17:18.746 [main] INFO  c.p.e.controller.CustomerController - Request for customer with id 1
+2024-05-03 12:17:18.761 [main] INFO  c.p.e.controller.CustomerController - Fetched customer with id: 1
+2024-05-03 12:17:18.896 [main] INFO  c.p.e.controller.CustomerController - Request for customer with id 100
+2024-05-03 12:17:18.907 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Customer not found with id : '100', path=uri=/api/customers/100)
+2024-05-03 12:17:19.016 [main] INFO  c.p.e.controller.CustomerController - Request for updating customer with id 100
+2024-05-03 12:17:19.026 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Customer not found with id : '100', path=uri=/api/customers/100)
+2024-05-03 12:17:19.209 [main] INFO  c.p.e.controller.CustomerController - Request for creating a new customer
+2024-05-03 12:17:19.240 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 15
+2024-05-03 12:17:19.252 [main] INFO  c.p.e.controller.CustomerController - New customer created with id 2
+2024-05-03 12:17:19.376 [main] INFO  c.p.e.controller.CustomerController - Request for fetching bill of customer with id 100
+2024-05-03 12:17:19.387 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Customer not found with id : '100', path=uri=/api/customers/100/bill)
+2024-05-03 12:17:19.518 [main] INFO  c.p.e.controller.CustomerController - Request for fetching all customers
+2024-05-03 12:17:19.530 [main] INFO  c.p.e.controller.CustomerController - Fetched 2 customers
+2024-05-03 12:17:19.646 [main] INFO  c.p.e.controller.CustomerController - Request to delete customer with id 100
+2024-05-03 12:17:19.655 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Customer not found with id : '100', path=uri=/api/customers/100)
+2024-05-03 12:17:19.766 [main] INFO  c.p.e.controller.CustomerController - Request for updating customer with id 5
+2024-05-03 12:17:19.819 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 19
+2024-05-03 12:17:19.832 [main] INFO  c.p.e.controller.CustomerController - Updated customer with id 5
+2024-05-03 12:17:19.963 [main] INFO  c.p.e.controller.CustomerController - Request to delete customer with id 6
+2024-05-03 12:17:19.982 [main] INFO  c.p.e.controller.CustomerController - Customer deleted with id 6
+2024-05-03 12:17:20.100 [main] INFO  c.p.e.controller.CustomerController - Request for fetching bill of customer with id 7
+2024-05-03 12:17:20.118 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 21
+2024-05-03 12:17:20.118 [main] INFO  c.p.e.controller.CustomerController - Fetched bill of customer with id 7
+2024-05-03 14:51:58.355 [main] INFO  c.p.e.controller.CustomerController - Request for customer with id 1
+2024-05-03 14:51:58.380 [main] INFO  c.p.e.controller.CustomerController - Fetched customer with id: 1
+2024-05-03 14:51:58.806 [main] INFO  c.p.e.controller.CustomerController - Request for customer with id 100
+2024-05-03 14:51:58.827 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Customer not found with id : '100', path=uri=/api/customers/100)
+2024-05-03 14:51:59.135 [main] INFO  c.p.e.controller.CustomerController - Request for updating customer with id 100
+2024-05-03 14:51:59.163 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Customer not found with id : '100', path=uri=/api/customers/100)
+2024-05-03 14:51:59.485 [main] INFO  c.p.e.controller.CustomerController - Request for creating a new customer
+2024-05-03 14:51:59.629 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 9
+2024-05-03 14:51:59.644 [main] INFO  c.p.e.controller.CustomerController - New customer created with id 2
+2024-05-03 14:51:59.776 [main] INFO  c.p.e.controller.CustomerController - Request for fetching bill of customer with id 100
+2024-05-03 14:51:59.785 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Customer not found with id : '100', path=uri=/api/customers/100/bill)
+2024-05-03 14:51:59.912 [main] INFO  c.p.e.controller.CustomerController - Request for fetching all customers
+2024-05-03 14:51:59.928 [main] INFO  c.p.e.controller.CustomerController - Fetched 2 customers
+2024-05-03 14:52:00.078 [main] INFO  c.p.e.controller.CustomerController - Request to delete customer with id 100
+2024-05-03 14:52:00.089 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Customer not found with id : '100', path=uri=/api/customers/100)
+2024-05-03 14:52:00.222 [main] INFO  c.p.e.controller.CustomerController - Request for updating customer with id 5
+2024-05-03 14:52:00.364 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 13
+2024-05-03 14:52:00.419 [main] INFO  c.p.e.controller.CustomerController - Updated customer with id 5
+2024-05-03 14:52:00.701 [main] INFO  c.p.e.controller.CustomerController - Request to delete customer with id 6
+2024-05-03 14:52:00.729 [main] INFO  c.p.e.controller.CustomerController - Customer deleted with id 6
+2024-05-03 14:52:01.369 [main] INFO  c.p.e.controller.CustomerController - Request for fetching bill of customer with id 7
+2024-05-03 14:52:01.390 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 15
+2024-05-03 14:52:01.390 [main] INFO  c.p.e.controller.CustomerController - Fetched bill of customer with id 7
+2024-05-03 14:52:01.464 [main] INFO  c.p.e.controller.MeterController - Request to delete meter with id 16
+2024-05-03 14:52:01.485 [main] INFO  c.p.e.controller.MeterController - Meter deleted with id 16
+2024-05-03 14:52:01.540 [main] INFO  c.p.e.controller.MeterController - Request for updating meter with id 17
+2024-05-03 14:52:01.560 [main] INFO  c.p.e.controller.MeterController - Updated meter with id 17
+2024-05-03 14:52:01.598 [main] INFO  c.p.e.controller.MeterController - Request for creating a new meter
+2024-05-03 14:52:01.626 [main] INFO  c.p.e.controller.MeterController - New meter created with id 18
+2024-05-03 14:52:01.655 [main] INFO  c.p.e.controller.MeterController - Request for updating meter with id 100
+2024-05-03 14:52:01.663 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Meter not found with id : '100', path=uri=/api/meters/100)
+2024-05-03 14:52:01.694 [main] INFO  c.p.e.controller.MeterController - Request for meter with id 19
+2024-05-03 14:52:01.703 [main] INFO  c.p.e.controller.MeterController - Fetched meter with id 19
+2024-05-03 14:52:01.748 [main] INFO  c.p.e.controller.MeterController - Request for fetching all meters
+2024-05-03 14:52:01.756 [main] INFO  c.p.e.controller.MeterController - Fetched 2 meters
+2024-05-03 14:52:01.791 [main] INFO  c.p.e.controller.MeterController - Request to delete meter with id 100
+2024-05-03 14:52:01.800 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Meter not found with id : '100', path=uri=/api/meters/100)
+2024-05-03 14:52:01.848 [main] INFO  c.p.e.controller.MeterController - Request for meter with id 100
+2024-05-03 14:52:01.858 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Meter not found with id : '100', path=uri=/api/meters/100)
+2024-05-03 14:52:01.905 [main] INFO  c.p.e.c.PricePerUnitController - Request for updating price per unit with id 100
+2024-05-03 14:52:01.914 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=PricePerUnit not found with id : '100', path=uri=/api/price-per-unit/100)
+2024-05-03 14:52:01.933 [main] INFO  c.p.e.c.PricePerUnitController - Request for price per unit with id 100
+2024-05-03 14:52:01.943 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=PricePerUnit not found with id : '100', path=uri=/api/price-per-unit/100)
+2024-05-03 14:52:01.977 [main] INFO  c.p.e.c.PricePerUnitController - Request for creating a new price per unit.
+2024-05-03 14:52:01.995 [main] INFO  c.p.e.c.PricePerUnitController - New price per unit created with id 18
+2024-05-03 14:52:02.031 [main] INFO  c.p.e.c.PricePerUnitController - Request to delete price per unit with id 100
+2024-05-03 14:52:02.043 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=PricePerUnit not found with id : '100', path=uri=/api/price-per-unit/100)
+2024-05-03 14:52:02.077 [main] INFO  c.p.e.c.PricePerUnitController - Request to delete price per unit with id 19
+2024-05-03 14:52:02.102 [main] INFO  c.p.e.c.PricePerUnitController - Price per unit deleted with id 19
+2024-05-03 14:52:02.150 [main] INFO  c.p.e.c.PricePerUnitController - Request for price per unit with id 20
+2024-05-03 14:52:02.163 [main] INFO  c.p.e.c.PricePerUnitController - Fetched price per unit with id: 20
+2024-05-03 14:52:02.208 [main] INFO  c.p.e.c.PricePerUnitController - Request for updating price per unit with id 21
+2024-05-03 14:52:02.231 [main] INFO  c.p.e.c.PricePerUnitController - Updated price per unit with id 21
+2024-05-03 14:52:02.285 [main] INFO  c.p.e.c.PricePerUnitController - Request for fetching all prices per unit
+2024-05-03 14:52:02.297 [main] INFO  c.p.e.c.PricePerUnitController - Fetched 2 prices per unit
+2024-05-03 14:52:02.365 [main] INFO  c.p.e.controller.SupplierController - Request for updating supplier with id 12
+2024-05-03 14:52:02.388 [main] INFO  c.p.e.controller.SupplierController - Updated supplier with id 12 
+2024-05-03 14:52:02.418 [main] INFO  c.p.e.controller.SupplierController - Request for creating a new supplier
+2024-05-03 14:52:02.436 [main] INFO  c.p.e.controller.SupplierController - New supplier created with id 13
+2024-05-03 14:52:02.465 [main] INFO  c.p.e.controller.SupplierController - Request to delete supplier with id 100
+2024-05-03 14:52:02.485 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Supplier not found with id : '100', path=uri=/api/suppliers/100)
+2024-05-03 14:52:02.531 [main] INFO  c.p.e.controller.SupplierController - Request for fetching all suppliers
+2024-05-03 14:52:02.540 [main] INFO  c.p.e.controller.SupplierController - Fetched 2 suppliers
+2024-05-03 14:52:02.605 [main] INFO  c.p.e.controller.SupplierController - Request for supplier with id 16
+2024-05-03 14:52:02.614 [main] INFO  c.p.e.controller.SupplierController - Fetched supplier with id 16
+2024-05-03 14:52:02.665 [main] INFO  c.p.e.controller.SupplierController - Request to delete supplier with id 17
+2024-05-03 14:52:02.684 [main] INFO  c.p.e.controller.SupplierController - Supplier deleted with id 17
+2024-05-03 14:52:02.714 [main] INFO  c.p.e.controller.SupplierController - Request for updating supplier with id 100
+2024-05-03 14:52:02.722 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Supplier not found with id : '100', path=uri=/api/suppliers/100)
+2024-05-03 14:52:02.741 [main] INFO  c.p.e.controller.SupplierController - Request for supplier with id 100
+2024-05-03 14:52:02.749 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Supplier not found with id : '100', path=uri=/api/suppliers/100)
+2024-05-03 14:52:03.289 [main] INFO  c.p.e.controller.CustomerController - Request for fetching bill of customer with id 1
+2024-05-03 14:52:03.306 [main] INFO  c.p.e.controller.CustomerController - Fetched bill of customer with id 1
+2024-05-03 14:52:03.346 [main] INFO  c.p.e.controller.CustomerController - Request for customer with id 1
+2024-05-03 14:52:03.347 [main] INFO  c.p.e.controller.CustomerController - Fetched customer with id: 1
+2024-05-03 14:52:03.357 [main] INFO  c.p.e.controller.CustomerController - Request for fetching all customers
+2024-05-03 14:52:03.358 [main] INFO  c.p.e.controller.CustomerController - Fetched 2 customers
+2024-05-03 14:52:03.368 [main] INFO  c.p.e.controller.CustomerController - Request for updating customer with id 1
+2024-05-03 14:52:03.369 [main] INFO  c.p.e.controller.CustomerController - Updated customer with id 1
+2024-05-03 14:52:03.379 [main] INFO  c.p.e.controller.CustomerController - Request for creating a new customer
+2024-05-03 14:52:03.380 [main] INFO  c.p.e.controller.CustomerController - New customer created with id 1
+2024-05-03 14:52:03.389 [main] INFO  c.p.e.controller.CustomerController - Request to delete customer with id 1
+2024-05-03 14:52:03.390 [main] INFO  c.p.e.controller.CustomerController - Customer deleted with id 1
+2024-05-03 14:52:03.535 [main] INFO  c.p.e.controller.MeterController - Request to delete meter with id 1
+2024-05-03 14:52:03.539 [main] INFO  c.p.e.controller.MeterController - Meter deleted with id 1
+2024-05-03 14:52:03.546 [main] INFO  c.p.e.controller.MeterController - Request for updating meter with id 1
+2024-05-03 14:52:03.547 [main] INFO  c.p.e.controller.MeterController - Updated meter with id 1
+2024-05-03 14:52:03.554 [main] INFO  c.p.e.controller.MeterController - Request for creating a new meter
+2024-05-03 14:52:03.555 [main] INFO  c.p.e.controller.MeterController - New meter created with id 1
+2024-05-03 14:52:03.564 [main] INFO  c.p.e.controller.MeterController - Request for meter with id 1
+2024-05-03 14:52:03.565 [main] INFO  c.p.e.controller.MeterController - Fetched meter with id 1
+2024-05-03 14:52:03.573 [main] INFO  c.p.e.controller.MeterController - Request for fetching all meters
+2024-05-03 14:52:03.574 [main] INFO  c.p.e.controller.MeterController - Fetched 2 meters
+2024-05-03 14:52:03.687 [main] INFO  c.p.e.c.PricePerUnitController - Request to delete price per unit with id 1
+2024-05-03 14:52:03.690 [main] INFO  c.p.e.c.PricePerUnitController - Price per unit deleted with id 1
+2024-05-03 14:52:03.698 [main] INFO  c.p.e.c.PricePerUnitController - Request for price per unit with id 1
+2024-05-03 14:52:03.699 [main] INFO  c.p.e.c.PricePerUnitController - Fetched price per unit with id: 1
+2024-05-03 14:52:03.706 [main] INFO  c.p.e.c.PricePerUnitController - Request for updating price per unit with id 1
+2024-05-03 14:52:03.707 [main] INFO  c.p.e.c.PricePerUnitController - Updated price per unit with id 1
+2024-05-03 14:52:03.712 [main] INFO  c.p.e.c.PricePerUnitController - Request for fetching all prices per unit
+2024-05-03 14:52:03.713 [main] INFO  c.p.e.c.PricePerUnitController - Fetched 2 prices per unit
+2024-05-03 14:52:03.718 [main] INFO  c.p.e.c.PricePerUnitController - Request for creating a new price per unit.
+2024-05-03 14:52:03.718 [main] INFO  c.p.e.c.PricePerUnitController - New price per unit created with id 3
+2024-05-03 14:52:03.827 [main] INFO  c.p.e.controller.SupplierController - Request for creating a new supplier
+2024-05-03 14:52:03.827 [main] INFO  c.p.e.controller.SupplierController - New supplier created with id 3
+2024-05-03 14:52:03.832 [main] INFO  c.p.e.controller.SupplierController - Request for updating supplier with id 1
+2024-05-03 14:52:03.832 [main] INFO  c.p.e.controller.SupplierController - Updated supplier with id 1 
+2024-05-03 14:52:03.838 [main] INFO  c.p.e.controller.SupplierController - Request for fetching all suppliers
+2024-05-03 14:52:03.838 [main] INFO  c.p.e.controller.SupplierController - Fetched 2 suppliers
+2024-05-03 14:52:03.845 [main] INFO  c.p.e.controller.SupplierController - Request for supplier with id 1
+2024-05-03 14:52:03.846 [main] INFO  c.p.e.controller.SupplierController - Fetched supplier with id 1
+2024-05-03 14:52:03.851 [main] INFO  c.p.e.controller.SupplierController - Request to delete supplier with id 1
+2024-05-03 14:52:03.852 [main] INFO  c.p.e.controller.SupplierController - Supplier deleted with id 1
+2024-05-03 14:52:07.626 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-05-03 14:52:07.635 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-05-03 14:52:07.654 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-05-03 14:59:59.746 [main] INFO  c.p.e.controller.CustomerController - Request for customer with id 1
+2024-05-03 14:59:59.766 [main] INFO  c.p.e.controller.CustomerController - Fetched customer with id: 1
+2024-05-03 15:00:00.060 [main] INFO  c.p.e.controller.CustomerController - Request for customer with id 100
+2024-05-03 15:00:00.076 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Customer not found with id : '100', path=uri=/api/customers/100)
+2024-05-03 15:00:00.286 [main] INFO  c.p.e.controller.CustomerController - Request for updating customer with id 100
+2024-05-03 15:00:00.299 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Customer not found with id : '100', path=uri=/api/customers/100)
+2024-05-03 15:00:00.551 [main] INFO  c.p.e.controller.CustomerController - Request for creating a new customer
+2024-05-03 15:00:00.657 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 9
+2024-05-03 15:00:00.669 [main] INFO  c.p.e.controller.CustomerController - New customer created with id 2
+2024-05-03 15:00:00.800 [main] INFO  c.p.e.controller.CustomerController - Request for fetching bill of customer with id 100
+2024-05-03 15:00:00.812 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Customer not found with id : '100', path=uri=/api/customers/100/bill)
+2024-05-03 15:00:00.920 [main] INFO  c.p.e.controller.CustomerController - Request for fetching all customers
+2024-05-03 15:00:00.937 [main] INFO  c.p.e.controller.CustomerController - Fetched 2 customers
+2024-05-03 15:00:01.062 [main] INFO  c.p.e.controller.CustomerController - Request to delete customer with id 100
+2024-05-03 15:00:01.070 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Customer not found with id : '100', path=uri=/api/customers/100)
+2024-05-03 15:00:01.210 [main] INFO  c.p.e.controller.CustomerController - Request for updating customer with id 5
+2024-05-03 15:00:01.268 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 13
+2024-05-03 15:00:01.292 [main] INFO  c.p.e.controller.CustomerController - Updated customer with id 5
+2024-05-03 15:00:01.420 [main] INFO  c.p.e.controller.CustomerController - Request to delete customer with id 6
+2024-05-03 15:00:01.443 [main] INFO  c.p.e.controller.CustomerController - Customer deleted with id 6
+2024-05-03 15:00:02.032 [main] INFO  c.p.e.controller.CustomerController - Request for fetching bill of customer with id 7
+2024-05-03 15:00:02.051 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 15
+2024-05-03 15:00:02.051 [main] INFO  c.p.e.controller.CustomerController - Fetched bill of customer with id 7
+2024-05-03 15:00:02.146 [main] INFO  c.p.e.controller.MeterController - Request to delete meter with id 16
+2024-05-03 15:00:02.168 [main] INFO  c.p.e.controller.MeterController - Meter deleted with id 16
+2024-05-03 15:00:02.225 [main] INFO  c.p.e.controller.MeterController - Request for updating meter with id 17
+2024-05-03 15:00:02.248 [main] INFO  c.p.e.controller.MeterController - Updated meter with id 17
+2024-05-03 15:00:02.279 [main] INFO  c.p.e.controller.MeterController - Request for creating a new meter
+2024-05-03 15:00:02.290 [main] INFO  c.p.e.controller.MeterController - New meter created with id 18
+2024-05-03 15:00:02.323 [main] INFO  c.p.e.controller.MeterController - Request for updating meter with id 100
+2024-05-03 15:00:02.331 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Meter not found with id : '100', path=uri=/api/meters/100)
+2024-05-03 15:00:02.364 [main] INFO  c.p.e.controller.MeterController - Request for meter with id 19
+2024-05-03 15:00:02.372 [main] INFO  c.p.e.controller.MeterController - Fetched meter with id 19
+2024-05-03 15:00:02.416 [main] INFO  c.p.e.controller.MeterController - Request for fetching all meters
+2024-05-03 15:00:02.425 [main] INFO  c.p.e.controller.MeterController - Fetched 2 meters
+2024-05-03 15:00:02.460 [main] INFO  c.p.e.controller.MeterController - Request to delete meter with id 100
+2024-05-03 15:00:02.471 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Meter not found with id : '100', path=uri=/api/meters/100)
+2024-05-03 15:00:02.515 [main] INFO  c.p.e.controller.MeterController - Request for meter with id 100
+2024-05-03 15:00:02.525 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Meter not found with id : '100', path=uri=/api/meters/100)
+2024-05-03 15:00:02.563 [main] INFO  c.p.e.c.PricePerUnitController - Request for updating price per unit with id 100
+2024-05-03 15:00:02.575 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=PricePerUnit not found with id : '100', path=uri=/api/price-per-unit/100)
+2024-05-03 15:00:02.591 [main] INFO  c.p.e.c.PricePerUnitController - Request for price per unit with id 100
+2024-05-03 15:00:02.602 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=PricePerUnit not found with id : '100', path=uri=/api/price-per-unit/100)
+2024-05-03 15:00:02.635 [main] INFO  c.p.e.c.PricePerUnitController - Request for creating a new price per unit.
+2024-05-03 15:00:02.660 [main] INFO  c.p.e.c.PricePerUnitController - New price per unit created with id 18
+2024-05-03 15:00:02.694 [main] INFO  c.p.e.c.PricePerUnitController - Request to delete price per unit with id 100
+2024-05-03 15:00:02.704 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=PricePerUnit not found with id : '100', path=uri=/api/price-per-unit/100)
+2024-05-03 15:00:02.738 [main] INFO  c.p.e.c.PricePerUnitController - Request to delete price per unit with id 19
+2024-05-03 15:00:02.764 [main] INFO  c.p.e.c.PricePerUnitController - Price per unit deleted with id 19
+2024-05-03 15:00:02.803 [main] INFO  c.p.e.c.PricePerUnitController - Request for price per unit with id 20
+2024-05-03 15:00:02.813 [main] INFO  c.p.e.c.PricePerUnitController - Fetched price per unit with id: 20
+2024-05-03 15:00:02.852 [main] INFO  c.p.e.c.PricePerUnitController - Request for updating price per unit with id 21
+2024-05-03 15:00:02.882 [main] INFO  c.p.e.c.PricePerUnitController - Updated price per unit with id 21
+2024-05-03 15:00:02.926 [main] INFO  c.p.e.c.PricePerUnitController - Request for fetching all prices per unit
+2024-05-03 15:00:02.936 [main] INFO  c.p.e.c.PricePerUnitController - Fetched 2 prices per unit
+2024-05-03 15:00:03.000 [main] INFO  c.p.e.controller.SupplierController - Request for updating supplier with id 12
+2024-05-03 15:00:03.019 [main] INFO  c.p.e.controller.SupplierController - Updated supplier with id 12 
+2024-05-03 15:00:03.048 [main] INFO  c.p.e.controller.SupplierController - Request for creating a new supplier
+2024-05-03 15:00:03.059 [main] INFO  c.p.e.controller.SupplierController - New supplier created with id 13
+2024-05-03 15:00:03.088 [main] INFO  c.p.e.controller.SupplierController - Request to delete supplier with id 100
+2024-05-03 15:00:03.098 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Supplier not found with id : '100', path=uri=/api/suppliers/100)
+2024-05-03 15:00:03.235 [main] INFO  c.p.e.controller.SupplierController - Request for fetching all suppliers
+2024-05-03 15:00:03.250 [main] INFO  c.p.e.controller.SupplierController - Fetched 2 suppliers
+2024-05-03 15:00:03.322 [main] INFO  c.p.e.controller.SupplierController - Request for supplier with id 16
+2024-05-03 15:00:03.331 [main] INFO  c.p.e.controller.SupplierController - Fetched supplier with id 16
+2024-05-03 15:00:03.381 [main] INFO  c.p.e.controller.SupplierController - Request to delete supplier with id 17
+2024-05-03 15:00:03.398 [main] INFO  c.p.e.controller.SupplierController - Supplier deleted with id 17
+2024-05-03 15:00:03.429 [main] INFO  c.p.e.controller.SupplierController - Request for updating supplier with id 100
+2024-05-03 15:00:03.437 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Supplier not found with id : '100', path=uri=/api/suppliers/100)
+2024-05-03 15:00:03.456 [main] INFO  c.p.e.controller.SupplierController - Request for supplier with id 100
+2024-05-03 15:00:03.465 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Supplier not found with id : '100', path=uri=/api/suppliers/100)
+2024-05-03 15:00:03.933 [main] INFO  c.p.e.controller.CustomerController - Request for fetching bill of customer with id 1
+2024-05-03 15:00:03.953 [main] INFO  c.p.e.controller.CustomerController - Fetched bill of customer with id 1
+2024-05-03 15:00:03.998 [main] INFO  c.p.e.controller.CustomerController - Request for customer with id 1
+2024-05-03 15:00:03.998 [main] INFO  c.p.e.controller.CustomerController - Fetched customer with id: 1
+2024-05-03 15:00:04.011 [main] INFO  c.p.e.controller.CustomerController - Request for fetching all customers
+2024-05-03 15:00:04.011 [main] INFO  c.p.e.controller.CustomerController - Fetched 2 customers
+2024-05-03 15:00:04.022 [main] INFO  c.p.e.controller.CustomerController - Request for updating customer with id 1
+2024-05-03 15:00:04.023 [main] INFO  c.p.e.controller.CustomerController - Updated customer with id 1
+2024-05-03 15:00:04.035 [main] INFO  c.p.e.controller.CustomerController - Request for creating a new customer
+2024-05-03 15:00:04.036 [main] INFO  c.p.e.controller.CustomerController - New customer created with id 1
+2024-05-03 15:00:04.042 [main] INFO  c.p.e.controller.CustomerController - Request to delete customer with id 1
+2024-05-03 15:00:04.045 [main] INFO  c.p.e.controller.CustomerController - Customer deleted with id 1
+2024-05-03 15:00:04.208 [main] INFO  c.p.e.controller.MeterController - Request to delete meter with id 1
+2024-05-03 15:00:04.213 [main] INFO  c.p.e.controller.MeterController - Meter deleted with id 1
+2024-05-03 15:00:04.225 [main] INFO  c.p.e.controller.MeterController - Request for updating meter with id 1
+2024-05-03 15:00:04.225 [main] INFO  c.p.e.controller.MeterController - Updated meter with id 1
+2024-05-03 15:00:04.229 [main] INFO  c.p.e.controller.MeterController - Request for creating a new meter
+2024-05-03 15:00:04.229 [main] INFO  c.p.e.controller.MeterController - New meter created with id 1
+2024-05-03 15:00:04.239 [main] INFO  c.p.e.controller.MeterController - Request for meter with id 1
+2024-05-03 15:00:04.240 [main] INFO  c.p.e.controller.MeterController - Fetched meter with id 1
+2024-05-03 15:00:04.243 [main] INFO  c.p.e.controller.MeterController - Request for fetching all meters
+2024-05-03 15:00:04.243 [main] INFO  c.p.e.controller.MeterController - Fetched 2 meters
+2024-05-03 15:00:04.377 [main] INFO  c.p.e.c.PricePerUnitController - Request to delete price per unit with id 1
+2024-05-03 15:00:04.382 [main] INFO  c.p.e.c.PricePerUnitController - Price per unit deleted with id 1
+2024-05-03 15:00:04.390 [main] INFO  c.p.e.c.PricePerUnitController - Request for price per unit with id 1
+2024-05-03 15:00:04.390 [main] INFO  c.p.e.c.PricePerUnitController - Fetched price per unit with id: 1
+2024-05-03 15:00:04.396 [main] INFO  c.p.e.c.PricePerUnitController - Request for updating price per unit with id 1
+2024-05-03 15:00:04.397 [main] INFO  c.p.e.c.PricePerUnitController - Updated price per unit with id 1
+2024-05-03 15:00:04.404 [main] INFO  c.p.e.c.PricePerUnitController - Request for fetching all prices per unit
+2024-05-03 15:00:04.405 [main] INFO  c.p.e.c.PricePerUnitController - Fetched 2 prices per unit
+2024-05-03 15:00:04.411 [main] INFO  c.p.e.c.PricePerUnitController - Request for creating a new price per unit.
+2024-05-03 15:00:04.411 [main] INFO  c.p.e.c.PricePerUnitController - New price per unit created with id 3
+2024-05-03 15:00:04.523 [main] INFO  c.p.e.controller.SupplierController - Request for creating a new supplier
+2024-05-03 15:00:04.523 [main] INFO  c.p.e.controller.SupplierController - New supplier created with id 3
+2024-05-03 15:00:04.527 [main] INFO  c.p.e.controller.SupplierController - Request for updating supplier with id 1
+2024-05-03 15:00:04.528 [main] INFO  c.p.e.controller.SupplierController - Updated supplier with id 1 
+2024-05-03 15:00:04.533 [main] INFO  c.p.e.controller.SupplierController - Request for fetching all suppliers
+2024-05-03 15:00:04.534 [main] INFO  c.p.e.controller.SupplierController - Fetched 2 suppliers
+2024-05-03 15:00:04.540 [main] INFO  c.p.e.controller.SupplierController - Request for supplier with id 1
+2024-05-03 15:00:04.541 [main] INFO  c.p.e.controller.SupplierController - Fetched supplier with id 1
+2024-05-03 15:00:04.544 [main] INFO  c.p.e.controller.SupplierController - Request to delete supplier with id 1
+2024-05-03 15:00:04.544 [main] INFO  c.p.e.controller.SupplierController - Supplier deleted with id 1
+2024-05-03 15:00:08.627 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-05-03 15:00:08.633 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1
+2024-05-03 15:00:08.652 [main] INFO  c.p.e.service.CustomerService - Calculating bill of customer having meter id 1

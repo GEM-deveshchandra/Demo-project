@@ -33,6 +33,9 @@ The Electricity Management System is a simple CRUD based spring boot application
 - **Mockito**: Mocking framework for unit tests.
 - **MySQL**: Relational database management system for data storage.
 - **Maven**: Dependency management tool for Java projects.
+- **Flyway**: Database migration tool for managing schema changes.
+- **SpotBugs**: Static analysis tool for finding potential bugs in Java code.
+- **Docker**: Containerization platform for packaging, distributing, and running applications during Integration Tests.
  
 ## Getting Started
  
