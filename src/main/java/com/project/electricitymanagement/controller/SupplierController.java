@@ -3,6 +3,10 @@ package com.project.electricitymanagement.controller;
 import com.project.electricitymanagement.dto.SupplierDto;
 import com.project.electricitymanagement.entity.Supplier;
 import com.project.electricitymanagement.service.SupplierService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +29,8 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/suppliers")
+@Tag(name = "Supplier Controller", description = "Endpoints for managing suppliers")
+
 public class SupplierController {
     /**
      * Defining the logger object.
@@ -39,6 +45,11 @@ public class SupplierController {
      * @return The Response entity with the list of suppliers.
      */
     @GetMapping
+    @Operation(summary = "Retrieve all suppliers")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved list of suppliers"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<List<Supplier>> getAllSuppliers() {
         LOGGER.info("Request for fetching all suppliers");
         List<Supplier> suppliers = supplierService.getAllSuppliers();
@@ -54,6 +65,12 @@ public class SupplierController {
      * @return The Response entity with the supplier with the specified id.
      */
     @GetMapping("/{id}")
+    @Operation(summary = "Retrieve a supplier by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved supplier"),
+            @ApiResponse(responseCode = "404", description = "Supplier not found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<Supplier> getSupplierById(@PathVariable(value = "id") final Long id) {
         LOGGER.info(String.format("Request for supplier with id %d", id));
 
@@ -69,6 +86,12 @@ public class SupplierController {
      * @return The Response entity with the newly created supplier.
      */
     @PostMapping
+    @Operation(summary = "Create a new supplier")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Supplier created successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid input"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<Supplier> createSupplier(@Valid @RequestBody final SupplierDto supplierDto) {
         LOGGER.info("Request for creating a new supplier");
 
@@ -86,6 +109,13 @@ public class SupplierController {
      * @return The Response entity with the updated supplier.
      */
     @PutMapping("/{id}")
+    @Operation(summary = "Update an existing supplier")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Supplier updated successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid input"),
+            @ApiResponse(responseCode = "404", description = "Supplier not found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<Supplier> updateSupplier(@PathVariable(value = "id")final  Long id,
                                                    @Valid @RequestBody final SupplierDto supplierDetails) {
         LOGGER.info(String.format("Request for updating supplier with id %d", id));
@@ -103,6 +133,12 @@ public class SupplierController {
      * @return Status of operation: 200 if successful, or 404 if meter is not found.
      */
     @DeleteMapping("/{id}")
+    @Operation(summary = "Delete a supplier by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Supplier deleted successfully"),
+            @ApiResponse(responseCode = "404", description = "Supplier not found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<Object> deleteSupplier(@PathVariable(value = "id")final Long id) {
         LOGGER.info(String.format("Request to delete supplier with id %d", id));
 

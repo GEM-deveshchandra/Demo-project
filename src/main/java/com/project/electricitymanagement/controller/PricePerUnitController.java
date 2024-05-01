@@ -3,6 +3,10 @@ package com.project.electricitymanagement.controller;
 import com.project.electricitymanagement.dto.PricePerUnitDto;
 import com.project.electricitymanagement.service.PricePerUnitService;
 import com.project.electricitymanagement.entity.PricePerUnit;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +28,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/price-per-unit")
+@Tag(name = "PricePerUnit Controller", description = "Endpoints for managing price per unit")
 public class PricePerUnitController {
     /**
      * Defining the logger object.
@@ -38,6 +43,11 @@ public class PricePerUnitController {
      * @return The Response entity with the list of all price per unit.
      */
     @GetMapping
+    @Operation(summary = "Retrieve all prices per unit")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved list of prices per unit"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<List<PricePerUnit>> getAllPricePerUnit() {
         LOGGER.info("Request for fetching all prices per unit");
         List<PricePerUnit> pricePerUnits = pricePerUnitService.getAllPricePerUnit();
@@ -52,6 +62,12 @@ public class PricePerUnitController {
      * @return The Response entity with the price per unit as required.
      */
     @GetMapping("/{id}")
+    @Operation(summary = "Retrieve a price per unit by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved price per unit"),
+            @ApiResponse(responseCode = "404", description = "Price per unit not found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<PricePerUnit> getPricePerUnitById(@PathVariable(value = "id") final Long id) {
         LOGGER.info(String.format("Request for price per unit with id %d", id));
         PricePerUnit pricePerUnit = pricePerUnitService.getPricePerUnitById(id);
@@ -66,6 +82,12 @@ public class PricePerUnitController {
      * @return The Response entity with the newly created price per unit.
      */
     @PostMapping
+    @Operation(summary = "Create a new price per unit")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Price per unit created successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid input"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<PricePerUnit> createPricePerUnit(@Valid @RequestBody final PricePerUnitDto pricePerUnitDto) {
         LOGGER.info(("Request for creating a new price per unit."));
 
@@ -83,6 +105,13 @@ public class PricePerUnitController {
      * @return The Response entity with the updated price per unit.
      */
     @PutMapping("/{id}")
+    @Operation(summary = "Update an existing price per unit")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Price per unit updated successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid input"),
+            @ApiResponse(responseCode = "404", description = "Price per unit not found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<PricePerUnit> updatePricePerUnit(@PathVariable(value = "id")final  Long id,
                                              @Valid @RequestBody final PricePerUnitDto pricePerUnitDetails) {
         LOGGER.info(String.format("Request for updating price per unit with id %d", id));
@@ -100,6 +129,12 @@ public class PricePerUnitController {
      * @return Status of operation: 200 if successful, or 404 if meter is not found.
      */
     @DeleteMapping("/{id}")
+    @Operation(summary = "Delete a price per unit by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Price per unit deleted successfully"),
+            @ApiResponse(responseCode = "404", description = "Price per unit not found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<Object> deletePricePerUnit(@PathVariable(value = "id") final Long id) {
         LOGGER.info(String.format("Request to delete price per unit with id %d", id));
 

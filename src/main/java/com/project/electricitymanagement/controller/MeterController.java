@@ -3,6 +3,10 @@ package com.project.electricitymanagement.controller;
 import com.project.electricitymanagement.dto.MeterDto;
 import com.project.electricitymanagement.service.MeterService;
 import com.project.electricitymanagement.entity.Meter;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +29,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/meters")
+@Tag(name = "Meter Controller", description = "Endpoints for managing meters")
 public class MeterController {
     /**
      * Defining the logger object.
@@ -39,6 +44,11 @@ public class MeterController {
      * @return The Response entity with the list of meters.
      */
     @GetMapping
+    @Operation(summary = "Retrieve all meters")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved list of meters"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<List<Meter>> getAllMeters() {
         LOGGER.info("Request for fetching all meters");
 
@@ -55,6 +65,12 @@ public class MeterController {
      * @return The Response entity with the meter with the specified id.
      */
     @GetMapping("/{id}")
+    @Operation(summary = "Retrieve a meter by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved meter"),
+            @ApiResponse(responseCode = "404", description = "Meter not found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<Meter> getMeterById(@PathVariable(value = "id")final Long id) {
         LOGGER.info(String.format("Request for meter with id %d", id));
 
@@ -70,6 +86,12 @@ public class MeterController {
      * @return The Response entity with the newly created meter.
      */
     @PostMapping
+    @Operation(summary = "Create a new meter")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Meter created successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid input"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<Meter> createMeter(@Valid @RequestBody final MeterDto meterDto) {
         LOGGER.info(("Request for creating a new meter"));
 
@@ -86,6 +108,13 @@ public class MeterController {
      * @return The Response entity with the updated meter.
      */
     @PutMapping("/{id}")
+    @Operation(summary = "Update an existing meter")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Meter updated successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid input"),
+            @ApiResponse(responseCode = "404", description = "Meter not found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<Meter> updateMeter(@PathVariable(value = "id")final  Long id,
                                              @Valid @RequestBody final MeterDto meterDetails) {
         LOGGER.info(String.format("Request for updating meter with id %d", id));
@@ -102,6 +131,12 @@ public class MeterController {
      * @return Status of operation: 200 if successful, or 404 if meter is not found.
      */
     @DeleteMapping("/{id}")
+    @Operation(summary = "Delete a meter by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Meter deleted successfully"),
+            @ApiResponse(responseCode = "404", description = "Meter not found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     public ResponseEntity<Object> deleteMeter(@PathVariable(value = "id") final Long id) {
         LOGGER.info(String.format("Request to delete meter with id %d", id));
 
