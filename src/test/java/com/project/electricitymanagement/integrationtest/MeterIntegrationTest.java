@@ -1,10 +1,9 @@
-package com.project.electricitymanagement.integration;
+package com.project.electricitymanagement.integrationtest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project.electricitymanagement.dto.MeterDto;
 import com.project.electricitymanagement.entity.Meter;
 import com.project.electricitymanagement.repository.MeterRepository;
-import com.project.electricitymanagement.service.MeterService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,16 +11,19 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
+
 import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-@Transactional
-public class MeterIntegrationTest {
+public class MeterIntegrationTest extends AbstractContainerTest {
+
+    private static final String API_URL = "/api/meters";
 
     @Autowired
     private MockMvc mockMvc;
@@ -33,72 +35,128 @@ public class MeterIntegrationTest {
     private MeterRepository meterRepository;
 
     @BeforeEach
-    public void setup() {
-        // Initialize database with test data
-        meterRepository.saveAll(List.of(
-                new Meter(1L, 1, 500),
-                new Meter(2L, 2, 700)
-        ));
+    void resetDatabase() {
+        meterRepository.deleteAll();
+    }
+
+    @Test
+    public void testCreateMeter_ValidInput() throws Exception {
+        MeterDto meterDto = new MeterDto();
+        meterDto.setLoadAmount(2);
+        meterDto.setMinBillAmount(700D);
+
+        mockMvc.perform(post(API_URL)
+                        .content(objectMapper.writeValueAsString(meterDto))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isCreated())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.id", notNullValue()))
+                .andExpect(jsonPath("$.loadAmount", is(meterDto.getLoadAmount())))
+                .andExpect(jsonPath("$.minBillAmount", is(meterDto.getMinBillAmount())));
+    }
+
+    @Test
+    public void testCreateMeter_InvalidInput() throws Exception {
+        MeterDto meterDto = new MeterDto();
+        meterDto.setLoadAmount(2);
+
+        mockMvc.perform(post(API_URL)
+                        .content(objectMapper.writeValueAsString(meterDto))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest());
     }
 
     @Test
     public void testGetAllMeters() throws Exception {
-        mockMvc.perform(get("/meters")
-                        .contentType(MediaType.APPLICATION_JSON))
+        Meter meter1 = new Meter();
+        meter1.setLoadAmount(1);
+        meter1.setMinBillAmount(500D);
+
+        Meter meter2 = new Meter();
+        meter2.setLoadAmount(2);
+        meter2.setMinBillAmount(700D);
+        meterRepository.saveAll(List.of(meter1, meter2));
+
+        mockMvc.perform(get(API_URL))
                 .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0].id", is(1)))
-                .andExpect(jsonPath("$[0].loadAmount", is(1)))
-                .andExpect(jsonPath("$[0].minBillAmount", is(500)))
-                .andExpect(jsonPath("$[1].id", is(2)))
-                .andExpect(jsonPath("$[1].loadAmount", is(2)))
-                .andExpect(jsonPath("$[1].minBillAmount", is(700)));
+                .andExpect(jsonPath("$[0].loadAmount", is(meter1.getLoadAmount())))
+                .andExpect(jsonPath("$[0].minBillAmount", is(meter1.getMinBillAmount())))
+                .andExpect(jsonPath("$[1].loadAmount", is(meter2.getLoadAmount())))
+                .andExpect(jsonPath("$[1].minBillAmount", is(meter2.getMinBillAmount())));
     }
 
     @Test
     public void testGetMeterById() throws Exception {
-        mockMvc.perform(get("/meters/{id}", 1)
-                        .contentType(MediaType.APPLICATION_JSON))
+        Meter meter = new Meter();
+        meter.setMinBillAmount(500D);
+        meter.setLoadAmount(2);
+        Meter savedMeter = meterRepository.save(meter);
+
+        mockMvc.perform(get(API_URL + "/{id}", savedMeter.getId()))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id", is(1)))
-                .andExpect(jsonPath("$.loadAmount", is(1)))
-                .andExpect(jsonPath("$.minBillAmount", is(500)));
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.id", is(savedMeter.getId().intValue())))
+                .andExpect(jsonPath("$.loadAmount", is(savedMeter.getLoadAmount())))
+                .andExpect(jsonPath("$.minBillAmount", is(savedMeter.getMinBillAmount())));
     }
 
     @Test
-    public void testCreateMeter() throws Exception {
-        MeterDto meterDto = new MeterDto(3, 800);
-
-        mockMvc.perform(post("/meters")
-                        .content(objectMapper.writeValueAsString(meterDto))
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.id", notNullValue()))
-                .andExpect(jsonPath("$.loadAmount", is(3)))
-                .andExpect(jsonPath("$.minBillAmount", is(800)));
+    public void testGetMeterById_NotFound() throws Exception {
+        mockMvc.perform(get(API_URL + "/{id}", 100))
+                .andExpect(status().isNotFound());
     }
 
     @Test
     public void testUpdateMeter() throws Exception {
-        MeterDto meterDto = new MeterDto(1, 1000); // Update the load amount
+        Meter meter = new Meter();
+        meter.setMinBillAmount(500D);
+        meter.setLoadAmount(2);
+        Meter savedMeter = meterRepository.save(meter);
 
-        mockMvc.perform(put("/meters/{id}", 1)
-                        .content(objectMapper.writeValueAsString(meterDto))
+        MeterDto updatedMeterDto = new MeterDto();
+        updatedMeterDto.setLoadAmount(3);
+        updatedMeterDto.setMinBillAmount(1000D);
+
+        mockMvc.perform(put(API_URL + "/{id}", savedMeter.getId())
+                        .content(objectMapper.writeValueAsString(updatedMeterDto))
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id", is(1)))
-                .andExpect(jsonPath("$.loadAmount", is(1))) // Load amount should remain unchanged
-                .andExpect(jsonPath("$.minBillAmount", is(1000)));
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.id", is(savedMeter.getId().intValue())))
+                .andExpect(jsonPath("$.loadAmount", is(updatedMeterDto.getLoadAmount())))
+                .andExpect(jsonPath("$.minBillAmount", is(updatedMeterDto.getMinBillAmount())));
+    }
+
+    @Test
+    public void testUpdateMeter_NotFound() throws Exception {
+        MeterDto updatedMeterDto = new MeterDto();
+        updatedMeterDto.setLoadAmount(3);
+        updatedMeterDto.setMinBillAmount(1000D);
+
+        mockMvc.perform(put(API_URL + "/{id}", 100)
+                        .content(objectMapper.writeValueAsString(updatedMeterDto))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
     }
 
     @Test
     public void testDeleteMeter() throws Exception {
-        mockMvc.perform(delete("/meters/{id}", 1))
+        Meter meter = new Meter();
+        meter.setMinBillAmount(500D);
+        meter.setLoadAmount(2);
+        Meter savedMeter = meterRepository.save(meter);
+
+        mockMvc.perform(delete(API_URL + "/{id}", savedMeter.getId()))
                 .andExpect(status().isOk());
 
-        // Check if the meter is deleted
-        mockMvc.perform(get("/meters/{id}", 1)
-                        .contentType(MediaType.APPLICATION_JSON))
+        assertFalse(meterRepository.existsById(savedMeter.getId()));
+    }
+
+    @Test
+    public void testDeleteMeter_NotFound() throws Exception {
+        mockMvc.perform(delete(API_URL + "/{id}", 100))
                 .andExpect(status().isNotFound());
     }
 }
