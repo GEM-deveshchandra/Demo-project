@@ -1,0 +1,2 @@
+2024-04-30 17:47:32.962 [main] INFO  c.p.e.controller.CustomerController - Request for creating a new customer
+2024-04-30 17:47:33.075 [main] DEBUG c.p.e.e.GlobalExceptionHandler - Resource not found exception ErrorMessage(status=404 NOT_FOUND, message=Supplier not found with id : '1', path=uri=/api/customers)

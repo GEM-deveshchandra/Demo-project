@@ -117,13 +117,13 @@ public class CustomerService {
      * @param meterId        The meter ID of the customer.
      * @return The total bill amount
      */
-    public double calculateBillAmount(final double lastReading, final double currentReading, final Long meterId) {
+    public Double calculateBillAmount(final double lastReading, final double currentReading, final Long meterId) {
 
         double unitsConsumed = currentReading - lastReading;
         double pricePerUnit = getPricePerUnit(unitsConsumed);
         double minBillAmount = getMinBillAmount(meterId);
         LOGGER.info(String.format("Calculating bill of customer having meter id %d", meterId));
-        return (unitsConsumed * pricePerUnit) + minBillAmount;
+        return (double)((unitsConsumed * pricePerUnit) + minBillAmount);
     }
 
     /**
