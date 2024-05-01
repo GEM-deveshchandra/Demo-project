@@ -110,7 +110,7 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id", notNullValue()))
                 .andExpect(jsonPath("$.name", is(customerDto.getName())))
-                .andExpect(jsonPath("$.connectionDate",is(customerDto.getConnectionDate())))
+                .andExpect(jsonPath("$.connectionDate",is(customerDto.getConnectionDate().toString())))
                 .andExpect(jsonPath("$.address",is(customerDto.getAddress())))
                 .andExpect(jsonPath("$.billAmount", greaterThan(0.0)));
     }
@@ -154,10 +154,10 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
                 .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(jsonPath("$[0].name", is(customer1.getName())))
                 .andExpect(jsonPath("$[0].address",is(customer1.getAddress())))
-                .andExpect(jsonPath("$[0].connectionDate",is(customer1.getConnectionDate())))
+                .andExpect(jsonPath("$[0].connectionDate",is(customer1.getConnectionDate().toString())))
                 .andExpect(jsonPath("$[1].name", is(customer2.getName())))
                 .andExpect(jsonPath("$[1].address",is(customer2.getAddress())))
-                .andExpect(jsonPath("$[1].connectionDate",is(customer2.getConnectionDate())));
+                .andExpect(jsonPath("$[1].connectionDate",is(customer2.getConnectionDate().toString())));
     }
 
     @Test
@@ -176,10 +176,10 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
         mockMvc.perform(get(CUSTOMER_API_URL + "/{id}", savedCustomer.getId()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.id", is(savedCustomer.getId())))
+                .andExpect(jsonPath("$.id", is(savedCustomer.getId().intValue())))
                 .andExpect(jsonPath("$.name", is(savedCustomer.getName())))
-                .andExpect(jsonPath("$address",is(savedCustomer.getAddress())))
-                .andExpect(jsonPath("$connectionDate",is(savedCustomer.getConnectionDate())));
+                .andExpect(jsonPath("$.address",is(savedCustomer.getAddress())))
+                .andExpect(jsonPath("$.connectionDate",is(savedCustomer.getConnectionDate().toString())));
     }
 
     @Test
@@ -202,8 +202,8 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
 
         CustomerDto updatedCustomerDto = new CustomerDto();
         updatedCustomerDto.setName("Rahul");
-        updatedCustomerDto.setAddress("Lucknow");
-        updatedCustomerDto.setConnectionDate(LocalDate.of(2024, 2, 1));
+        updatedCustomerDto.setAddress("Delhi");
+        updatedCustomerDto.setConnectionDate(LocalDate.of(2024, 1, 1));
         updatedCustomerDto.setLastReading(200d);
         updatedCustomerDto.setCurrentReading(250d);
         updatedCustomerDto.setMeterId(savedMeter.getId());
@@ -215,10 +215,10 @@ public class CustomerIntegrationTest extends AbstractContainerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.id", is(savedCustomer.getId())))
+                .andExpect(jsonPath("$.id", is(savedCustomer.getId().intValue())))
                 .andExpect(jsonPath("$.name", is(updatedCustomerDto.getName())))
-                .andExpect(jsonPath("$address",is(updatedCustomerDto.getAddress())))
-                .andExpect(jsonPath("$connectionDate",is(updatedCustomerDto.getConnectionDate())));
+                .andExpect(jsonPath("$.address",is(updatedCustomerDto.getAddress())))
+                .andExpect(jsonPath("$.connectionDate",is(updatedCustomerDto.getConnectionDate().toString())));
     }
 
     @Test
