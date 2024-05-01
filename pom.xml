@@ -142,10 +142,6 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>com.github.spotbugs</groupId>
-                <artifactId>spotbugs-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
@@ -157,28 +153,21 @@
                     </excludes>
                 </configuration>
             </plugin>
-        </plugins>
-        <!-- To define the plugin version in your parent POM -->
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>com.github.spotbugs</groupId>
-                    <artifactId>spotbugs-maven-plugin</artifactId>
-                    <version>4.8.4.0</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
-    <!-- To use the report goals in your POM or parent POM -->
-    <reporting>
-        <plugins>
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>4.8.4.0</version>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>
-    </reporting>
-
+    </build>
 </project>
