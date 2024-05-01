@@ -1,5 +1,6 @@
-package com.project.electricitymanagement.controller;
+package com.project.electricitymanagement.unittest.controller;
 
+import com.project.electricitymanagement.controller.CustomerController;
 import com.project.electricitymanagement.dto.CustomerDto;
 import com.project.electricitymanagement.entity.Customer;
 import com.project.electricitymanagement.service.CustomerService;

@@ -1,4 +1,4 @@
-package com.project.electricitymanagement.controller;
+package com.project.electricitymanagement.unittest.controller;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
@@ -10,6 +10,7 @@ import static org.mockito.Mockito.when;
 import java.util.Arrays;
 import java.util.List;
 
+import com.project.electricitymanagement.controller.SupplierController;
 import com.project.electricitymanagement.dto.SupplierDto;
 import com.project.electricitymanagement.service.SupplierService;
 import com.project.electricitymanagement.entity.Supplier;

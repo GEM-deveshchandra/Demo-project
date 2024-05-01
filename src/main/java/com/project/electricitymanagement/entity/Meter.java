@@ -31,11 +31,11 @@ public class Meter {
      * Load amount of the meter.
      */
     @NotNull
-    private int loadAmount;
+    private Integer loadAmount;
     /**
      * Minimum bill amount associated with the load.
      */
     @NotNull
-    private double minBillAmount;
+    private Double minBillAmount;
 
 }

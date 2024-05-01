@@ -15,16 +15,16 @@ public class PricePerUnitDto {
      * Lower bound of the unit range.
      */
     @NotNull
-    private int unitRangeLower;
+    private Integer unitRangeLower;
     /**
      * Upper bound of the unit range.
      */
     @NotNull
-    private int unitRangeUpper;
+    private Integer unitRangeUpper;
     /**
      * Price per unit corresponding to the range.
      */
     @NotNull
-    private double price;
+    private Double price;
 
 }

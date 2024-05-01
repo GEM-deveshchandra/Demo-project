@@ -49,16 +49,16 @@ public class Customer {
      * Last recorded reading on the meter.
      */
     @NotNull
-    private double lastReading;
+    private Double lastReading;
     /**
      * Current reading on the meter.
      */
     @NotNull
-    private double currentReading;
+    private Double currentReading;
     /**
      * The total bill of the customer based on units consumed and the meter ID.
      */
-    private double billAmount;
+    private Double billAmount;
 
     /**
      * The meter associated with the customer.

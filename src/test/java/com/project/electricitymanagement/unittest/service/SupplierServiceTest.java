@@ -1,9 +1,10 @@
-package com.project.electricitymanagement.service;
+package com.project.electricitymanagement.unittest.service;
 
 import com.project.electricitymanagement.dto.SupplierDto;
 import com.project.electricitymanagement.entity.Supplier;
 import com.project.electricitymanagement.exception.ResourceNotFoundException;
 import com.project.electricitymanagement.repository.SupplierRepository;
+import com.project.electricitymanagement.service.SupplierService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -31,12 +31,12 @@ public class CustomerDto {
      * Last recorded reading of the meter.
      */
     @NotNull
-    private double lastReading;
+    private Double lastReading;
     /**
      * Current reading of the meter.
      */
     @NotNull
-    private double currentReading;
+    private Double currentReading;
     /**
      * Meter Id associated with the customer.
      */

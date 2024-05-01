@@ -1,9 +1,10 @@
-package com.project.electricitymanagement.service;
+package com.project.electricitymanagement.unittest.service;
 
 import com.project.electricitymanagement.dto.PricePerUnitDto;
 import com.project.electricitymanagement.entity.PricePerUnit;
 import com.project.electricitymanagement.exception.ResourceNotFoundException;
 import com.project.electricitymanagement.repository.PricePerUnitRepository;
+import com.project.electricitymanagement.service.PricePerUnitService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

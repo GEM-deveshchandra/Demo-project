@@ -1,4 +1,4 @@
-package com.project.electricitymanagement.service;
+package com.project.electricitymanagement.unittest.service;
 
 import com.project.electricitymanagement.dto.CustomerDto;
 import com.project.electricitymanagement.entity.Customer;
@@ -9,6 +9,7 @@ import com.project.electricitymanagement.repository.CustomerRepository;
 import com.project.electricitymanagement.repository.MeterRepository;
 import com.project.electricitymanagement.repository.PricePerUnitRepository;
 import com.project.electricitymanagement.repository.SupplierRepository;
+import com.project.electricitymanagement.service.CustomerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -58,7 +59,7 @@ class CustomerServiceTest {
 
     @BeforeEach
     void setUp() {
-        meter = new Meter(1L, 2, 234);
+        meter = new Meter(1L, 2, 234D);
         supplier = new Supplier(1L, "Danish", "Urban");
         testCustomer = new Customer();
         testCustomer.setId(1L);
@@ -170,7 +171,7 @@ class CustomerServiceTest {
         ResponseEntity<Object> result = customerService.deleteCustomerById(1L);
 
         assertNotNull(result);
-        assertEquals(200, result.getStatusCodeValue());
+        assertEquals(200, result.getStatusCode());
     }
 
     @Test

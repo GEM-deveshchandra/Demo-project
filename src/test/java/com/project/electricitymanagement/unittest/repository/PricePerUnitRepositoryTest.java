@@ -1,6 +1,7 @@
-package com.project.electricitymanagement.repository;
+package com.project.electricitymanagement.unittest.repository;
 
 import com.project.electricitymanagement.entity.PricePerUnit;
+import com.project.electricitymanagement.repository.PricePerUnitRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,7 +27,7 @@ class PricePerUnitRepositoryTest {
     void setUp() {
         //this is required if data.sql file is there else we can comment this out.
         pricePerUnitRepository.deleteAll();
-        pricePerUnit = new PricePerUnit(1L, 200, 300, 7);
+        pricePerUnit = new PricePerUnit(1L, 200, 300, 7d);
         pricePerUnitRepository.save(pricePerUnit);
 
 
