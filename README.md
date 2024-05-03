@@ -36,7 +36,7 @@ The Electricity Management System is a simple CRUD based spring boot application
 - **Flyway**: Database migration tool for managing schema changes.
 - **SpotBugs**: Static analysis tool for finding potential bugs in Java code.
 - **Docker**: Containerization platform for packaging, distributing, and running applications during Integration Tests.
-- **JaCoCo**:JaCoCo is a free Java code coverage library distributed under the Eclipse Public License.
+- **JaCoCo**: JaCoCo is a free Java code coverage library distributed under the Eclipse Public License.
 ## Getting Started
  
 To run the Electricity Management System locally, follow these steps:
